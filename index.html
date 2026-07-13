@@ -1,1 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxy Neuro | Learn • Build • Innovate</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================== -->
+
+<header class="header">
+
+    <div class="container nav">
+
+        <!-- Logo -->
+
+        <a href="#" class="logo">
+
+            <img src="images/logo.png" alt="Oxy Neuro">
+
+        </a>
+
+        <!-- Navigation -->
+
+        <nav class="navbar">
+
+            <a href="#" class="active">Home</a>
+            <a href="#">Features</a>
+            <a href="#">About</a>
+            <a href="#">Community</a>
+            <a href="#">Resources</a>
+            <a href="#">Contact</a>
+
+        </nav>
+
+        <!-- Button -->
+
+        <a href="#" class="join-btn">
+            Join Now
+            <i class="ri-arrow-right-line"></i>
+        </a>
+
+        <!-- Mobile Menu -->
+
+        <div class="menu-btn">
+            <i class="ri-menu-3-line"></i>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<section class="hero">
+
+    <div class="container hero-grid">
+
+        <!-- Left -->
+
+        <div class="hero-left">
+
+            <span class="hero-badge">
+
+                WELCOME TO OXY NEURO
+
+            </span>
+
+            <h1>
+
+                Code Today.<br>
+
+                <span>Build Tomorrow.</span><br>
+
+                Lead the Future.
+
+            </h1>
+
+            <p>
+
+                Oxy Neuro is a modern coding and AI community for
+                learners and builders. Learn programming,
+                Artificial Intelligence, projects and startups
+                with an interactive learning experience.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#" class="primary-btn">
+
+                    <i class="ri-code-box-line"></i>
+
+                    Start Coding
+
+                </a>
+
+                <a href="#" class="secondary-btn">
+
+                    <i class="ri-group-line"></i>
+
+                    Explore Community
+
+                </a>
+
+            </div>
+
+            <!-- Stats -->
+
+            <div class="hero-stats">
+
+                <div class="stat">
+
+                    <i class="ri-user-3-line"></i>
+
+                    <h3>2K+</h3>
+
+                    <span>Developers</span>
+
+                </div>
+
+                <div class="stat">
+
+                    <i class="ri-folder-line"></i>
+
+                    <h3>180+</h3>
+
+                    <span>Projects</span>
+
+                </div>
+
+                <div class="stat">
+
+                    <i class="ri-book-open-line"></i>
+
+                    <h3>25+</h3>
+
+                    <span>Resources</span>
+
+                </div>
+
+                <div class="stat">
+
+                    <i class="ri-calendar-event-line"></i>
+
+                    <h3>50+</h3>
+
+                    <span>Events</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right -->
+
+        <div class="hero-right">
+
+            <div class="hero-image">
+
+                <img src="images/hero-laptop.png"
+                     alt="Coding Laptop">
+
+                <!-- Floating Icons -->
+
+                <div class="float html">
+
+                    &lt;/&gt;
+
+                </div>
+
+                <div class="float js">
+
+                    JS
+
+                </div>
+
+                <div class="float ts">
+
+                    TS
+
+                </div>
+
+                <div class="float py">
+
+                    PY
+
+                </div>
+
+                <div class="float ai">
+
+                    AI
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Continue with Part 2 -->
+  /* ==========================================
+   OXY NEURO
+   STYLE.CSS - PART 3
+   Footer + Responsive + Animations
+========================================== */
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+    padding:80px 0 30px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:rgba(255,255,255,.02);
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1fr 1.2fr;
+
+    gap:40px;
+
+}
+
+.footer-logo{
+
+    height:55px;
+
+    margin-bottom:20px;
+
+}
+
+.footer-col p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+.footer-col h4{
+
+    margin-bottom:20px;
+
+    font-size:20px;
+
+}
+
+.footer-col a{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    color:var(--muted);
+
+    transition:.3s;
+
+}
+
+.footer-col a:hover{
+
+    color:#00d4ff;
+
+    transform:translateX(5px);
+
+}
+
+.social-icons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+.social-icons a{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#111c35;
+
+    font-size:20px;
+
+    transition:.35s;
+
+}
+
+.social-icons a:hover{
+
+    background:linear-gradient(135deg,#6f7cff,#00d4ff);
+
+    transform:translateY(-5px);
+
+}
+
+.copyright{
+
+    margin-top:25px;
+
+    font-size:14px;
+
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#08111f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#00d4ff;
+
+    border-radius:20px;
+
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.feature-card,
+.community-card,
+.stat,
+.timeline{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+.hero-image img{
+
+    filter:drop-shadow(0 0 30px rgba(0,212,255,.35));
+
+}
+
+.primary-btn:hover,
+.join-btn:hover{
+
+    box-shadow:0 15px 35px rgba(0,212,255,.35);
+
+}
+
+.feature-icon{
+
+    box-shadow:0 0 25px rgba(0,212,255,.25);
+
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+@media(max-width:900px){
+
+    .navbar{
+
+        position:absolute;
+
+        top:85px;
+
+        left:5%;
+
+        right:5%;
+
+        background:#10182d;
+
+        border:1px solid rgba(255,255,255,.08);
+
+        border-radius:20px;
+
+        display:none;
+
+        flex-direction:column;
+
+        padding:25px;
+
+        gap:18px;
+
+    }
+
+    .navbar.active{
+
+        display:flex;
+
+    }
+
+    .menu-btn{
+
+        display:block;
+
+    }
+
+    .join-btn{
+
+        display:none;
+
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:1000px){
+
+    .hero-grid,
+
+    .roadmap-box{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .hero p{
+
+        margin:auto auto 35px;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .hero-stats{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .hero{
+
+        padding-top:140px;
+
+    }
+
+    .hero h1{
+
+        font-size:42px;
+
+    }
+
+    .section-title h2{
+
+        font-size:32px;
+
+    }
+
+    .roadmap-left h2{
+
+        font-size:34px;
+
+    }
+
+    .hero-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .feature-grid,
+
+    .community-grid,
+
+    .tech-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .social-icons{
+
+        justify-content:center;
+
+    }
+
+    .float{
+
+        display:none;
+
+    }
+
+}
+
+/* =========================
+   SMALL DEVICES
+========================= */
+
+@media(max-width:480px){
+
+    .primary-btn,
+
+    .secondary-btn{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .hero h1{
+
+        font-size:34px;
+
+    }
+
+    .hero-badge{
+
+        font-size:12px;
+
+    }
+
+}
+  <!-- =========================
+     COMMUNITY SECTION
+========================== -->
+
+<section class="community-section">
+
+    <div class="container community-grid">
+
+        <!-- Live Activity -->
+
+        <div class="community-card">
+
+            <h3>Live Community Activity</h3>
+
+            <div class="activity-item">
+                <img src="images/users/user1.jpg" alt="">
+                <div>
+                    <h4>Aman</h4>
+                    <p>Just submitted a project</p>
+                    <span>AI Chat Assistant</span>
+                </div>
+                <small>2m ago</small>
+            </div>
+
+            <div class="activity-item">
+                <img src="images/users/user2.jpg" alt="">
+                <div>
+                    <h4>Riya</h4>
+                    <p>Solved a challenge</p>
+                    <span>Binary Search</span>
+                </div>
+                <small>10m ago</small>
+            </div>
+
+            <div class="activity-item">
+                <img src="images/users/user3.jpg" alt="">
+                <div>
+                    <h4>Devansh</h4>
+                    <p>Joined the community</p>
+                    <span>Welcome!</span>
+                </div>
+                <small>15m ago</small>
+            </div>
+
+        </div>
+
+        <!-- Technologies -->
+
+        <div class="community-card">
+
+            <h3>Popular Technologies</h3>
+
+            <div class="tech-grid">
+
+                <div class="tech">
+                    <i class="ri-html5-fill"></i>
+                    <span>HTML</span>
+                </div>
+
+                <div class="tech">
+                    <i class="ri-css3-fill"></i>
+                    <span>CSS</span>
+                </div>
+
+                <div class="tech">
+                    <i class="ri-javascript-fill"></i>
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="tech">
+                    <i class="ri-code-box-fill"></i>
+                    <span>TypeScript</span>
+                </div>
+
+                <div class="tech">
+                    <i class="ri-terminal-box-fill"></i>
+                    <span>Python</span>
+                </div>
+
+                <div class="tech">
+                    <i class="ri-reactjs-line"></i>
+                    <span>React</span>
+                </div>
+
+                <div class="tech">
+                    <i class="ri-node-tree"></i>
+                    <span>Node.js</span>
+                </div>
+
+                <div class="tech">
+                    <i class="ri-database-2-line"></i>
+                    <span>MongoDB</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CTA -->
+
+        <div class="community-card join-card">
+
+            <h2>Join Oxy Neuro Today</h2>
+
+            <p>
+                Be part of a community that builds,
+                learns and innovates together.
+            </p>
+
+            <a href="#" class="primary-btn">
+
+                Join Now
+
+                <i class="ri-arrow-right-line"></i>
+
+            </a>
+
+            <div class="planet-glow"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+        <!-- Logo -->
+
+        <div class="footer-col">
+
+            <img src="images/logo.png"
+                 class="footer-logo"
+                 alt="Oxy Neuro">
+
+            <p>
+
+                A community for developers,
+                learners and innovators.
+
+            </p>
+
+            <p class="copyright">
+
+                © 2025 Oxy Neuro.
+                All Rights Reserved.
+
+            </p>
+
+        </div>
+
+        <!-- Links -->
+
+        <div class="footer-col">
+
+            <h4>Quick Links</h4>
+
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">Resources</a>
+            <a href="#">Community</a>
+            <a href="#">About</a>
+
+        </div>
+
+        <!-- Resources -->
+
+        <div class="footer-col">
+
+            <h4>Resources</h4>
+
+            <a href="#">Roadmaps</a>
+            <a href="#">Tutorials</a>
+            <a href="#">Projects</a>
+            <a href="#">Challenges</a>
+            <a href="#">Blog</a>
+
+        </div>
+
+        <!-- Community -->
+
+        <div class="footer-col">
+
+            <h4>Community</h4>
+
+            <a href="#">Discord</a>
+            <a href="#">GitHub</a>
+            <a href="#">Events</a>
+            <a href="#">Leaderboard</a>
+
+        </div>
+
+        <!-- Social -->
+
+        <div class="footer-col">
+
+            <h4>Stay Connected</h4>
+
+            <div class="social-icons">
+
+                <a href="#"><i class="ri-discord-fill"></i></a>
+                <a href="#"><i class="ri-github-fill"></i></a>
+                <a href="#"><i class="ri-twitter-x-fill"></i></a>
+                <a href="#"><i class="ri-youtube-fill"></i></a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- JavaScript -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
