@@ -222,402 +222,254 @@
 </section>
 
 <!-- Continue with Part 2 -->
-  /* ==========================================
-   OXY NEURO
-   STYLE.CSS - PART 3
-   Footer + Responsive + Animations
-========================================== */
+    <!-- =========================
+     WHAT WE OFFER
+========================== -->
 
-/* =========================
-   FOOTER
-========================= */
+<section class="features">
 
-.footer{
+    <div class="container">
 
-    padding:80px 0 30px;
+        <div class="section-title">
 
-    border-top:1px solid rgba(255,255,255,.08);
+            <h2>What We Offer</h2>
 
-    background:rgba(255,255,255,.02);
+            <p>
+                Everything you need to learn, build and grow as a developer.
+            </p>
 
-}
+        </div>
 
-.footer-grid{
+        <div class="feature-grid">
 
-    display:grid;
+            <!-- Card 1 -->
 
-    grid-template-columns:2fr 1fr 1fr 1fr 1.2fr;
+            <div class="feature-card">
 
-    gap:40px;
+                <div class="feature-icon">
+                    <i class="ri-code-s-slash-line"></i>
+                </div>
 
-}
+                <h3>Coding</h3>
 
-.footer-logo{
+                <p>
+                    From beginner to advanced programming with structured roadmaps.
+                </p>
 
-    height:55px;
+                <a href="#">
+                    <i class="ri-arrow-right-line"></i>
+                </a>
 
-    margin-bottom:20px;
+            </div>
 
-}
+            <!-- Card 2 -->
 
-.footer-col p{
+            <div class="feature-card">
 
-    color:var(--muted);
+                <div class="feature-icon">
+                    <i class="ri-cpu-line"></i>
+                </div>
 
-    line-height:1.8;
+                <h3>Artificial Intelligence</h3>
 
-}
+                <p>
+                    Explore AI, Machine Learning and modern technologies shaping tomorrow.
+                </p>
 
-.footer-col h4{
+                <a href="#">
+                    <i class="ri-arrow-right-line"></i>
+                </a>
 
-    margin-bottom:20px;
+            </div>
 
-    font-size:20px;
+            <!-- Card 3 -->
 
-}
+            <div class="feature-card">
 
-.footer-col a{
+                <div class="feature-icon">
+                    <i class="ri-folder-open-line"></i>
+                </div>
 
-    display:block;
+                <h3>Projects</h3>
 
-    margin-bottom:12px;
+                <p>
+                    Build real-world applications and create an impressive portfolio.
+                </p>
 
-    color:var(--muted);
+                <a href="#">
+                    <i class="ri-arrow-right-line"></i>
+                </a>
 
-    transition:.3s;
+            </div>
 
-}
+            <!-- Card 4 -->
 
-.footer-col a:hover{
+            <div class="feature-card">
 
-    color:#00d4ff;
+                <div class="feature-icon">
+                    <i class="ri-rocket-2-line"></i>
+                </div>
 
-    transform:translateX(5px);
+                <h3>Startups</h3>
 
-}
+                <p>
+                    Turn innovative ideas into successful startups and products.
+                </p>
 
-.social-icons{
+                <a href="#">
+                    <i class="ri-arrow-right-line"></i>
+                </a>
 
-    display:flex;
+            </div>
 
-    gap:15px;
+            <!-- Card 5 -->
 
-    margin-top:20px;
+            <div class="feature-card">
 
-}
+                <div class="feature-icon">
+                    <i class="ri-group-line"></i>
+                </div>
 
-.social-icons a{
+                <h3>Community</h3>
 
-    width:45px;
+                <p>
+                    Learn together, collaborate and connect with developers worldwide.
+                </p>
 
-    height:45px;
+                <a href="#">
+                    <i class="ri-arrow-right-line"></i>
+                </a>
 
-    display:flex;
+            </div>
 
-    align-items:center;
+            <!-- Card 6 -->
 
-    justify-content:center;
+            <div class="feature-card">
 
-    border-radius:50%;
+                <div class="feature-icon">
+                    <i class="ri-trophy-line"></i>
+                </div>
 
-    background:#111c35;
+                <h3>Challenges</h3>
 
-    font-size:20px;
+                <p>
+                    Participate in coding contests, hackathons and exciting competitions.
+                </p>
 
-    transition:.35s;
+                <a href="#">
+                    <i class="ri-arrow-right-line"></i>
+                </a>
 
-}
+            </div>
 
-.social-icons a:hover{
+        </div>
 
-    background:linear-gradient(135deg,#6f7cff,#00d4ff);
+    </div>
 
-    transform:translateY(-5px);
+</section>
 
-}
 
-.copyright{
+<!-- =========================
+     ROADMAP
+========================== -->
 
-    margin-top:25px;
+<section class="roadmap">
 
-    font-size:14px;
+    <div class="container roadmap-box">
 
-}
+        <div class="roadmap-left">
 
-/* =========================
-   SCROLLBAR
-========================= */
+            <h2>Level Up Your Skills</h2>
 
-::-webkit-scrollbar{
+            <p>
 
-    width:8px;
+                Access curated learning paths, tutorials, coding challenges
+                and real-world projects to become a professional developer.
 
-}
+            </p>
 
-::-webkit-scrollbar-track{
+            <a href="#" class="primary-btn">
 
-    background:#08111f;
+                Explore Resources
 
-}
+                <i class="ri-book-open-line"></i>
 
-::-webkit-scrollbar-thumb{
+            </a>
 
-    background:#00d4ff;
+        </div>
 
-    border-radius:20px;
+        <div class="roadmap-right">
 
-}
+            <div class="timeline">
 
-/* =========================
-   ANIMATIONS
-========================= */
+                <div class="step">
 
-@keyframes fadeUp{
+                    <div class="dot beginner"></div>
 
-    from{
+                    <h4>Beginner</h4>
 
-        opacity:0;
+                    <span>Start Here</span>
 
-        transform:translateY(40px);
+                </div>
 
-    }
+                <div class="line"></div>
 
-    to{
+                <div class="step">
 
-        opacity:1;
+                    <div class="dot learn"></div>
 
-        transform:translateY(0);
+                    <h4>Learn</h4>
 
-    }
+                    <span>Build Basics</span>
 
-}
+                </div>
 
-.feature-card,
-.community-card,
-.stat,
-.timeline{
+                <div class="line"></div>
 
-    animation:fadeUp .8s ease both;
+                <div class="step">
 
-}
+                    <div class="dot practice"></div>
 
-.hero-image img{
+                    <h4>Practice</h4>
 
-    filter:drop-shadow(0 0 30px rgba(0,212,255,.35));
+                    <span>Sharpen Skills</span>
 
-}
+                </div>
 
-.primary-btn:hover,
-.join-btn:hover{
+                <div class="line"></div>
 
-    box-shadow:0 15px 35px rgba(0,212,255,.35);
+                <div class="step">
 
-}
+                    <div class="dot build"></div>
 
-.feature-icon{
+                    <h4>Build</h4>
 
-    box-shadow:0 0 25px rgba(0,212,255,.25);
+                    <span>Real Projects</span>
 
-}
+                </div>
 
-/* =========================
-   MOBILE MENU
-========================= */
+                <div class="line"></div>
 
-@media(max-width:900px){
+                <div class="step">
 
-    .navbar{
+                    <div class="dot master"></div>
 
-        position:absolute;
+                    <h4>Master</h4>
 
-        top:85px;
+                    <span>Be The Expert</span>
 
-        left:5%;
+                </div>
 
-        right:5%;
+            </div>
 
-        background:#10182d;
+        </div>
 
-        border:1px solid rgba(255,255,255,.08);
+    </div>
 
-        border-radius:20px;
+</section>
 
-        display:none;
-
-        flex-direction:column;
-
-        padding:25px;
-
-        gap:18px;
-
-    }
-
-    .navbar.active{
-
-        display:flex;
-
-    }
-
-    .menu-btn{
-
-        display:block;
-
-    }
-
-    .join-btn{
-
-        display:none;
-
-    }
-
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media(max-width:1000px){
-
-    .hero-grid,
-
-    .roadmap-box{
-
-        grid-template-columns:1fr;
-
-        text-align:center;
-
-    }
-
-    .hero p{
-
-        margin:auto auto 35px;
-
-    }
-
-    .hero-buttons{
-
-        justify-content:center;
-
-    }
-
-    .hero-stats{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
-    .footer-grid{
-
-        grid-template-columns:repeat(2,1fr);
-
-    }
-
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:768px){
-
-    .hero{
-
-        padding-top:140px;
-
-    }
-
-    .hero h1{
-
-        font-size:42px;
-
-    }
-
-    .section-title h2{
-
-        font-size:32px;
-
-    }
-
-    .roadmap-left h2{
-
-        font-size:34px;
-
-    }
-
-    .hero-stats{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .feature-grid,
-
-    .community-grid,
-
-    .tech-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .footer-grid{
-
-        grid-template-columns:1fr;
-
-        text-align:center;
-
-    }
-
-    .social-icons{
-
-        justify-content:center;
-
-    }
-
-    .float{
-
-        display:none;
-
-    }
-
-}
-
-/* =========================
-   SMALL DEVICES
-========================= */
-
-@media(max-width:480px){
-
-    .primary-btn,
-
-    .secondary-btn{
-
-        width:100%;
-
-        justify-content:center;
-
-    }
-
-    .hero-buttons{
-
-        flex-direction:column;
-
-    }
-
-    .hero h1{
-
-        font-size:34px;
-
-    }
-
-    .hero-badge{
-
-        font-size:12px;
-
-    }
-
-}
-  <!-- =========================
+<!-- Continue with Part 3 -->
+    <!-- =========================
      COMMUNITY SECTION
 ========================== -->
 
