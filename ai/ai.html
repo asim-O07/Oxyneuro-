@@ -43,6 +43,17 @@
         ::-webkit-scrollbar-track { background: #020617; }
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #334155; }
+        html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+#chatStream {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+        
     </style>
 </head>
 <body class="text-slate-100 antialiased min-h-screen relative selection:bg-purple-500 selection:text-white">
