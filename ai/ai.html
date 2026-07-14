@@ -538,7 +538,10 @@
             `;
             chatStream.appendChild(clientBubble);
             userInput.value = "";
-            chatStream.scrollTop = chatStream.scrollHeight;
+            chatStream.scrollTo({
+    top: chatStream.scrollHeight,
+    behavior: "smooth"
+});
 
             // Simulate Engine Multi-tier computation timeout lag
             setTimeout(() => {
@@ -562,8 +565,10 @@
                 `;
                 chatStream.appendChild(automatedSystemCard);
                 lucide.createIcons(); // Refresh vectors inside appended components
-                chatStream.scrollTop = chatStream.scrollHeight;
-            }, 900);
+                chatStream.scrollTo({
+    top: chatStream.scrollHeight,
+    behavior: "smooth"
+});
         }
 
         // Clear log function
