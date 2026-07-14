@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OxyNeuro Startups - Build the Next Generation of Startups with AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#020617',
+                        cardBg: '#031215',
+                        borderGreen: '#10b981',
+                        neonGreen: '#34d399',
+                        accentGold: '#facc15',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background: radial-gradient(circle at top left, #051d19 0%, #030712 50%, #02040a 100%);
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+        
+        .custom-glow-box {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(3, 7, 18, 0.6) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.15);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .custom-glow-box:hover {
+            border-color: rgba(52, 211, 153, 0.5);
+            box-shadow: 0 12px 40px -10px rgba(16, 185, 129, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .neon-accent-shadow {
+            box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Floating Animation for Rocket in Hero Grid */
+        @keyframes hoverFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+        }
+        .float-animation {
+            animation: hoverFloat 5s ease-in-out infinite;
+        }
+
+        /* Ambient Glow Circles behind sections */
+        .ambient-glow-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+            filter: blur(40px);
+            pointer-events: none;
+        }
+
+        .ambient-glow-2 {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(234, 179, 8, 0.07) 0%, rgba(0, 0, 0, 0) 70%);
+            filter: blur(50px);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-emerald-500 selection:text-black">
+
+    <div class="absolute top-[10%] left-[-10%] ambient-glow-1 z-0"></div>
+    <div class="absolute top-[40%] right-[-10%] ambient-glow-2 z-0"></div>
+    <div class="absolute top-[70%] left-[20%] ambient-glow-1 z-0"></div>
+
+    <div id="modalOverlay" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center hidden transition-all duration-300 opacity-0">
+        <div class="bg-[#04161a] border border-emerald-500/30 rounded-2xl p-8 max-w-lg w-full mx-4 shadow-2xl relative">
+            <button onclick="toggleModal()" class="absolute top-4 right-4 text-gray-400 hover:text-emerald-400 transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div id="modalFormContent">
+                <h3 class="text-2xl font-bold text-white mb-2 flex items-center gap-2">
+                    <i data-lucide="lightbulb" class="text-amber-400"></i> Submit Your Startup Idea
+                </h3>
+                <p class="text-gray-400 text-sm mb-6">Pitch your MVP concept to the OxyNeuro Network. Get building tools, core support & funding.</p>
+                
+                <form id="ideaForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1">Startup Name</label>
+                        <input type="text" required class="w-full bg-[#020d0f] border border-emerald-500/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-emerald-400/60 transition" placeholder="e.g. NeuroSync AI">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1">Your Pitch / Core AI Value</label>
+                        <textarea required rows="3" class="w-full bg-[#020d0f] border border-emerald-500/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-emerald-400/60 transition" placeholder="Describe how your startup leverages AI to solve a core industry issue..."></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1">Email Address</label>
+                        <input type="email" required class="w-full bg-[#020d0f] border border-emerald-500/20 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-emerald-400/60 transition" placeholder="you@domain.com">
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-black font-extrabold rounded-lg shadow-lg hover:shadow-emerald-500/20 transition duration-300">
+                        Submit Pitch to Portal
+                    </button>
+                </form>
+            </div>
+            <div id="modalSuccessContent" class="hidden text-center py-8">
+                <div class="inline-flex p-4 bg-emerald-500/10 rounded-full border border-emerald-500/30 text-emerald-400 mb-4 animate-bounce">
+                    <i data-lucide="check-circle" class="w-12 h-12"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">Idea Submitted Successfully!</h3>
+                <p class="text-gray-400 mb-6">Our startup curators are reviewing your concept. We will email you detailed dashboard entry details shortly.</p>
+                <button onclick="toggleModal()" class="px-6 py-2 bg-neutral-800 text-white rounded-lg hover:bg-neutral-700 transition">Close Window</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 w-full bg-darkBg/80 backdrop-blur-md border-b border-emerald-500/10 z-40">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="relative w-9 h-9 flex items-center justify-center bg-emerald-950 border border-emerald-500/30 rounded-xl group-hover:border-emerald-400 transition-colors">
+                    <i data-lucide="brain-circuit" class="w-5 h-5 text-emerald-400 group-hover:scale-110 transition-transform"></i>
+                </div>
+                <div class="flex flex-col leading-tight">
+                    <span class="text-lg font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-emerald-400 to-teal-400">OXYNEURO</span>
+                    <span class="text-[9px] font-semibold text-emerald-400/80 tracking-widest uppercase">Startups</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">Home</a>
+                <a href="#startups" class="text-emerald-400 font-medium border-b-2 border-emerald-400 pb-1">Startups</a>
+                <a href="#journey" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">Ideas</a>
+                <a href="#community" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">Community</a>
+                <a href="#why" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">Resources</a>
+                <a href="#footer" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">Events</a>
+                <a href="#footer" class="text-gray-300 hover:text-emerald-400 font-medium transition-colors">About</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-4">
+                <button onclick="toggleModal()" class="text-gray-300 hover:text-white font-semibold text-sm transition-colors">Login</button>
+                <button onclick="toggleModal()" class="px-5 py-2 bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold text-sm rounded-full tracking-wider hover:shadow-lg hover:shadow-emerald-500/20 transition duration-300">Join Now</button>
+            </div>
+
+            <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-400 hover:text-white transition">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-darkBg/95 border-b border-emerald-500/10 px-6 py-6 space-y-4">
+            <a href="#" class="block text-gray-300 hover:text-emerald-400 font-medium transition">Home</a>
+            <a href="#startups" class="block text-emerald-400 font-medium transition">Startups</a>
+            <a href="#journey" class="block text-gray-300 hover:text-emerald-400 font-medium transition">Ideas</a>
+            <a href="#community" class="block text-gray-300 hover:text-emerald-400 font-medium transition">Community</a>
+            <a href="#why" class="block text-gray-300 hover:text-emerald-400 font-medium transition">Resources</a>
+            <div class="pt-4 border-t border-emerald-500/10 flex flex-col gap-3">
+                <button onclick="toggleModal()" class="py-2.5 text-center text-gray-300 hover:text-white font-semibold border border-emerald-500/20 rounded-lg">Login</button>
+                <button onclick="toggleModal()" class="py-2.5 text-center bg-emerald-500 text-black font-extrabold rounded-lg">Join Now</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative max-w-7xl mx-auto px-6 pt-12 pb-24 lg:pt-20 lg:pb-32 flex flex-col lg:flex-row items-center gap-16 z-10">
+        <div class="flex-1 space-y-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-950/80 border border-emerald-500/30 rounded-full">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="text-xs text-emerald-400 font-semibold tracking-wider uppercase">OxyNeuro Startups</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                Build the Next <br class="hidden sm:block">Generation of <br>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-300">Startups with AI</span>
+            </h1>
+
+            <p class="text-gray-400 text-lg sm:text-xl max-w-xl leading-relaxed">
+                Transform your ideas into real businesses. Learn, build, launch, and scale innovative startups with the OxyNeuro community.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                <a href="#startups" class="px-8 py-3.5 bg-gradient-to-r from-yellow-400 to-emerald-400 text-black font-extrabold rounded-full flex items-center justify-center gap-2 hover:brightness-110 shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/20 transition duration-300">
+                    <i data-lucide="rocket" class="w-5 h-5"></i>
+                    Explore Startups
+                </a>
+                <button onclick="toggleModal()" class="px-8 py-3.5 bg-darkBg/60 text-white font-bold rounded-full border border-yellow-400/40 hover:border-yellow-400 hover:bg-yellow-400/5 flex items-center justify-center gap-2 transition duration-300">
+                    <i data-lucide="lightbulb" class="w-5 h-5 text-amber-400"></i>
+                    Submit Your Idea
+                </button>
+            </div>
+        </div>
+
+        <div class="flex-1 w-full max-w-lg lg:max-w-none relative flex justify-center items-center py-10">
+            <div class="absolute w-72 h-72 bg-emerald-500/20 rounded-full blur-[80px] pointer-events-none"></div>
+            
+            <div class="relative float-animation w-full max-w-md bg-gradient-to-b from-[#051c1e] to-[#01090c] border border-emerald-500/20 p-8 rounded-3xl shadow-2xl">
+                <div class="flex flex-col items-center justify-center py-12 relative">
+                    <div class="w-24 h-24 bg-emerald-500/10 border border-emerald-400/30 rounded-full flex items-center justify-center neon-accent-shadow mb-6">
+                        <i data-lucide="rocket" class="w-12 h-12 text-emerald-400"></i>
+                    </div>
+                    <div class="absolute bottom-6 w-20 h-16 bg-emerald-500/20 filter blur-xl rounded-full"></div>
+                </div>
+
+                <div class="absolute -top-4 -left-6 bg-[#031d1b] border border-emerald-500/30 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-lg">
+                    <i data-lucide="cpu" class="w-4 h-4 text-emerald-400"></i>
+                    <span class="text-xs font-bold text-white">AI Powered</span>
+                </div>
+                
+                <div class="absolute top-1/4 -right-8 bg-[#031d1b] border border-emerald-500/30 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-lg">
+                    <i data-lucide="code" class="w-4 h-4 text-emerald-400"></i>
+                    <span class="text-xs font-bold text-white">Build</span>
+                </div>
+
+                <div class="absolute bottom-1/3 -left-10 bg-[#031d1b] border border-emerald-500/30 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-lg">
+                    <i data-lucide="lightbulb" class="w-4 h-4 text-amber-400 animate-pulse"></i>
+                    <span class="text-xs font-bold text-white">Innovate</span>
+                </div>
+
+                <div class="absolute -bottom-4 right-4 bg-[#031d1b] border border-emerald-500/30 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-lg">
+                    <i data-lucide="trending-up" class="w-4 h-4 text-amber-400"></i>
+                    <span class="text-xs font-bold text-white">Launch</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="startups" class="max-w-7xl mx-auto px-6 py-20 border-t border-emerald-500/5 relative z-10">
+        <div class="text-center mb-16">
+            <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest block mb-2">• WHAT WE DO •</span>
+            <h2 class="text-3xl font-extrabold text-white">Startup Platform Offerings</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="custom-glow-box p-6 rounded-2xl relative overflow-hidden group">
+                <div class="w-12 h-12 bg-emerald-950/60 border border-emerald-500/30 rounded-xl flex items-center justify-center mb-6 text-emerald-400 group-hover:scale-110 transition-transform">
+                    <i data-lucide="rocket" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-emerald-400 mb-3">Startup Incubator</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Turn ideas into working products with guidance from experienced builders.</p>
+                <div class="w-1/3 h-0.5 bg-gradient-to-r from-emerald-500 to-transparent mt-4 opacity-50"></div>
+            </div>
+
+            <div class="custom-glow-box p-6 rounded-2xl relative overflow-hidden group">
+                <div class="w-12 h-12 bg-emerald-950/60 border border-emerald-500/30 rounded-xl flex items-center justify-center mb-6 text-emerald-400 group-hover:scale-110 transition-transform">
+                    <i data-lucide="brain" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-emerald-400 mb-3">AI Innovation</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Create AI-powered applications using the latest machine learning stack.</p>
+                <div class="w-1/3 h-0.5 bg-gradient-to-r from-emerald-500 to-transparent mt-4 opacity-50"></div>
+            </div>
+
+            <div class="custom-glow-box p-6 rounded-2xl relative overflow-hidden group">
+                <div class="w-12 h-12 bg-emerald-950/60 border border-emerald-500/30 rounded-xl flex items-center justify-center mb-6 text-emerald-400 group-hover:scale-110 transition-transform">
+                    <i data-lucide="users" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-emerald-400 mb-3">Team Matching</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Find developers, designers, and marketers to build products together.</p>
+                <div class="w-1/3 h-0.5 bg-gradient-to-r from-emerald-500 to-transparent mt-4 opacity-50"></div>
+            </div>
+
+            <div class="custom-glow-box p-6 rounded-2xl relative overflow-hidden group">
+                <div class="w-12 h-12 bg-emerald-950/60 border border-emerald-500/30 rounded-xl flex items-center justify-center mb-6 text-emerald-400 group-hover:scale-110 transition-transform">
+                    <i data-lucide="trending-up" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-lg font-bold text-emerald-400 mb-3">Growth Support</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Get mentorship on product development, marketing, funding, and scaling.</p>
+                <div class="w-1/3 h-0.5 bg-gradient-to-r from-emerald-500 to-transparent mt-4 opacity-50"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey" class="max-w-7xl mx-auto px-6 py-20 border-t border-emerald-500/5 relative z-10">
+        <div class="text-center mb-20">
+            <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest block mb-2">• STARTUP JOURNEY •</span>
+            <h2 class="text-3xl font-extrabold text-white">How We Launch Ideas</h2>
+        </div>
+
+        <div class="relative flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-6">
+            <div class="hidden lg:block absolute top-[28px] left-[5%] right-[5%] h-0.5 border-t-2 border-dashed border-emerald-500/20 z-0"></div>
+            <div class="lg:hidden absolute top-[10px] bottom-[10px] left-[27px] w-0.5 border-l-2 border-dashed border-emerald-500/20 z-0"></div>
+
+            <div class="flex flex-row lg:flex-col items-start lg:items-center text-left lg:text-center group relative z-10 w-full lg:w-1/4 gap-6 lg:gap-0">
+                <div class="w-14 h-14 rounded-full bg-[#031d1b] border-2 border-amber-400/80 flex items-center justify-center flex-shrink-0 lg:mb-6 shadow-md shadow-amber-500/10 transition group-hover:scale-110">
+                    <span class="text-amber-400 font-extrabold text-lg">01</span>
+                </div>
+                <div>
+                    <div class="flex items-center lg:justify-center gap-2 mb-2">
+                        <i data-lucide="lightbulb" class="w-5 h-5 text-amber-400"></i>
+                        <h3 class="text-xl font-bold text-white">Idea</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed lg:px-4">Validate and test your seed startup ideas.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-row lg:flex-col items-start lg:items-center text-left lg:text-center group relative z-10 w-full lg:w-1/4 gap-6 lg:gap-0">
+                <div class="w-14 h-14 rounded-full bg-[#031d1b] border-2 border-emerald-400 flex items-center justify-center flex-shrink-0 lg:mb-6 shadow-md shadow-emerald-500/10 transition group-hover:scale-110">
+                    <span class="text-emerald-400 font-extrabold text-lg">02</span>
+                </div>
+                <div>
+                    <div class="flex items-center lg:justify-center gap-2 mb-2">
+                        <i data-lucide="code-2" class="w-5 h-5 text-emerald-400"></i>
+                        <h3 class="text-xl font-bold text-white">Build</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed lg:px-4">Develop your MVP with OxyNeuro tools.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-row lg:flex-col items-start lg:items-center text-left lg:text-center group relative z-10 w-full lg:w-1/4 gap-6 lg:gap-0">
+                <div class="w-14 h-14 rounded-full bg-[#031d1b] border-2 border-emerald-400 flex items-center justify-center flex-shrink-0 lg:mb-6 shadow-md shadow-emerald-500/10 transition group-hover:scale-110">
+                    <span class="text-emerald-400 font-extrabold text-lg">03</span>
+                </div>
+                <div>
+                    <div class="flex items-center lg:justify-center gap-2 mb-2">
+                        <i data-lucide="send" class="w-5 h-5 text-emerald-400"></i>
+                        <h3 class="text-xl font-bold text-white">Launch</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed lg:px-4">Release your product to active target clients.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-row lg:flex-col items-start lg:items-center text-left lg:text-center group relative z-10 w-full lg:w-1/4 gap-6 lg:gap-0">
+                <div class="w-14 h-14 rounded-full bg-[#031d1b] border-2 border-emerald-400 flex items-center justify-center flex-shrink-0 lg:mb-6 shadow-md shadow-emerald-500/10 transition group-hover:scale-110">
+                    <span class="text-emerald-400 font-extrabold text-lg">04</span>
+                </div>
+                <div>
+                    <div class="flex items-center lg:justify-center gap-2 mb-2">
+                        <i data-lucide="bar-chart-3" class="w-5 h-5 text-emerald-400"></i>
+                        <h3 class="text-xl font-bold text-white">Grow</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed lg:px-4">Improve, scale and ready for investment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="community" class="max-w-7xl mx-auto px-6 py-20 border-t border-emerald-500/5 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-3">Featured Startup Categories</h3>
+                <p class="text-gray-400 mb-8 text-sm">Select a segment below to view active startups on our incubator dashboard.</p>
+                
+                <div class="grid grid-cols-2 gap-4" id="categoriesGrid">
+                    <div onclick="selectCategory('Artificial Intelligence')" class="category-card cursor-pointer p-4 rounded-xl border border-emerald-500/10 bg-[#031215]/50 flex items-center gap-4 hover:border-emerald-400/40 hover:bg-[#031215] transition-all">
+                        <div class="w-10 h-10 bg-emerald-950/60 rounded-lg flex items-center justify-center text-emerald-400">
+                            <i data-lucide="brain"></i>
+                        </div>
+                        <span class="font-semibold text-sm text-gray-300">Artificial Intelligence</span>
+                    </div>
+
+                    <div onclick="selectCategory('SaaS Platforms')" class="category-card cursor-pointer p-4 rounded-xl border border-emerald-500/10 bg-[#031215]/50 flex items-center gap-4 hover:border-emerald-400/40 hover:bg-[#031215] transition-all">
+                        <div class="w-10 h-10 bg-emerald-950/60 rounded-lg flex items-center justify-center text-emerald-400">
+                            <i data-lucide="cloud"></i>
+                        </div>
+                        <span class="font-semibold text-sm text-gray-300">SaaS Platforms</span>
+                    </div>
+
+                    <div onclick="selectCategory('Mobile Apps')" class="category-card cursor-pointer p-4 rounded-xl border border-emerald-500/10 bg-[#031215]/50 flex items-center gap-4 hover:border-emerald-400/40 hover:bg-[#031215] transition-all">
+                        <div class="w-10 h-10 bg-emerald-950/60 rounded-lg flex items-center justify-center text-emerald-400">
+                            <i data-lucide="smartphone"></i>
+                        </div>
+                        <span class="font-semibold text-sm text-gray-300">Mobile Apps</span>
+                    </div>
+
+                    <div onclick="selectCategory('Web Applications')" class="category-card cursor-pointer p-4 rounded-xl border border-emerald-500/10 bg-[#031215]/50 flex items-center gap-4 hover:border-emerald-400/40 hover:bg-[#031215] transition-all">
+                        <div class="w-10 h-10 bg-emerald-950/60 rounded-lg flex items-center justify-center text-emerald-400">
+                            <i data-lucide="globe"></i>
+                        </div>
+                        <span class="font-semibold text-sm text-gray-300">Web Applications</span>
+                    </div>
+
+                    <div onclick="selectCategory('EdTech')" class="category-card cursor-pointer p-4 rounded-xl border border-emerald-500/10 bg-[#031215]/50 flex items-center gap-4 hover:border-emerald-400/40 hover:bg-[#031215] transition-all">
+                        <div class="w-10 h-10 bg-emerald-950/60 rounded-lg flex items-center justify-center text-emerald-400">
+                            <i data-lucide="graduation-cap"></i>
+                        </div>
+                        <span class="font-semibold text-sm text-gray-300">EdTech</span>
+                    </div>
+
+                    <div onclick="selectCategory('HealthTech')" class="category-card cursor-pointer p-4 rounded-xl border border-emerald-500/10 bg-[#031215]/50 flex items-center gap-4 hover:border-emerald-400/40 hover:bg-[#031215] transition-all">
+                        <div class="w-10 h-10 bg-emerald-950/60 rounded-lg flex items-center justify-center text-emerald-400">
+                            <i data-lucide="heart-pulse"></i>
+                        </div>
+                        <span class="font-semibold text-sm text-gray-300">HealthTech</span>
+                    </div>
+
+                    <div onclick="selectCategory('FinTech')" class="category-card cursor-pointer p-4 rounded-xl border border-emerald-500/10 bg-[#031215]/50 flex items-center gap-4 hover:border-emerald-400/40 hover:bg-[#031215] transition-all">
+                        <div class="w-10 h-10 bg-emerald-950/60 rounded-lg flex items-center justify-center text-emerald-400">
+                            <i data-lucide="dollar-sign"></i>
+                        </div>
+                        <span class="font-semibold text-sm text-gray-300">FinTech</span>
+                    </div>
+
+                    <div onclick="selectCategory('Gaming')" class="category-card cursor-pointer p-4 rounded-xl border border-emerald-500/10 bg-[#031215]/50 flex items-center gap-4 hover:border-emerald-400/40 hover:bg-[#031215] transition-all">
+                        <div class="w-10 h-10 bg-emerald-950/60 rounded-lg flex items-center justify-center text-emerald-400">
+                            <i data-lucide="gamepad-2"></i>
+                        </div>
+                        <span class="font-semibold text-sm text-gray-300">Gaming</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/20">
+                    <p class="text-xs text-emerald-400 uppercase tracking-wider font-extrabold mb-1">Active Pipeline Segment</p>
+                    <p id="selectedCatText" class="text-lg font-extrabold text-white">Artificial Intelligence</p>
+                    <p id="selectedCatDesc" class="text-xs text-gray-400 mt-1">Founders are building large-language models and automation agents on our active platform pipeline.</p>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-3">Our Community in Numbers</h3>
+                <p class="text-gray-400 mb-8 text-sm">Empowering a fast-growing environment for startup builders worldwide.</p>
+
+                <div class="grid grid-cols-2 gap-6" id="statsContainer">
+                    <div class="border border-emerald-500/20 bg-[#04161a] p-6 rounded-2xl relative overflow-hidden group">
+                        <i data-lucide="users" class="w-8 h-8 text-emerald-400/50 absolute top-4 right-4"></i>
+                        <h4 class="text-4xl font-extrabold text-white mb-2"><span class="counter" data-target="500">0</span>+</h4>
+                        <p class="text-gray-400 text-sm font-semibold uppercase tracking-wider">Members</p>
+                    </div>
+
+                    <div class="border border-emerald-500/20 bg-[#04161a] p-6 rounded-2xl relative overflow-hidden group">
+                        <i data-lucide="code" class="w-8 h-8 text-emerald-400/50 absolute top-4 right-4"></i>
+                        <h4 class="text-4xl font-extrabold text-white mb-2"><span class="counter" data-target="100">0</span>+</h4>
+                        <p class="text-gray-400 text-sm font-semibold uppercase tracking-wider">Projects</p>
+                    </div>
+
+                    <div class="border border-emerald-500/20 bg-[#04161a] p-6 rounded-2xl relative overflow-hidden group">
+                        <i data-lucide="lightbulb" class="w-8 h-8 text-emerald-400/50 absolute top-4 right-4"></i>
+                        <h4 class="text-4xl font-extrabold text-white mb-2"><span class="counter" data-target="25">0</span>+</h4>
+                        <p class="text-gray-400 text-sm font-semibold uppercase tracking-wider">Startup Ideas</p>
+                    </div>
+
+                    <div class="border border-emerald-500/20 bg-[#04161a] p-6 rounded-2xl relative overflow-hidden group">
+                        <i data-lucide="clock" class="w-8 h-8 text-emerald-400/50 absolute top-4 right-4"></i>
+                        <h4 class="text-4xl font-extrabold text-white mb-2">24/7</h4>
+                        <p class="text-gray-400 text-sm font-semibold uppercase tracking-wider">Learning Support</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="why" class="max-w-7xl mx-auto px-6 py-20 border-t border-emerald-500/5 relative z-10">
+        <div class="text-center mb-16">
+            <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest block mb-2">• WHY OXYNEURO •</span>
+            <h2 class="text-3xl font-extrabold text-white">Ecosystem Benefits</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="flex gap-4">
+                <div class="w-12 h-12 rounded-xl bg-emerald-950/60 border border-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                    <i data-lucide="terminal" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2">Modern Tech Stack</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Build products with optimized developer toolchains, containerized deployment protocols, and integrated APIs.</p>
+                </div>
+            </div>
+           <div class="flex gap-4">
+                <div class="w-12 h-12 rounded-xl bg-emerald-950/60 border border-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                    <i data-lucide="messages-square" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2">Community Support</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Ask coding questions, find cofounders, run alpha test sessions, and chat directly inside private channels.</p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="w-12 h-12 rounded-xl bg-emerald-950/60 border border-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                    <i data-lucide="star" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2">Project Showcase</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Showcase validated tools directly to interested angel networks, venture groups, and specialized beta users.</p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="w-12 h-12 rounded-xl bg-emerald-950/60 border border-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                    <i data-lucide="trophy" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-2">Future Competitions</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Compete in private platform hackathons and showcase tournaments with cash rewards & dev grants.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-12 relative z-10">
+        <div class="bg-gradient-to-r from-lime-400 via-emerald-400 to-emerald-500 rounded-3xl p-8 md:p-12 lg:p-16 text-black relative overflow-hidden shadow-2xl flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="absolute inset-0 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px] opacity-10"></div>
+            
+            <div class="relative z-10 max-w-2xl space-y-4">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight">Ready to Build Something Extraordinary?</h2>
+                <p class="text-black/80 font-semibold text-base md:text-lg">Join OxyNeuro Startups and create technology that shapes the future.</p>
+                
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <button onclick="toggleModal()" class="px-8 py-3.5 bg-black hover:bg-neutral-900 text-white font-extrabold rounded-full transition shadow-lg flex items-center gap-2">
+                        <i data-lucide="users"></i> Join Community
+                    </button>
+                    <button onclick="toggleModal()" class="px-8 py-3.5 border-2 border-black/40 hover:border-black hover:bg-black/5 text-black font-extrabold rounded-full transition">
+                        Start Building
+                    </button>
+                </div>
+            </div>
+
+            <div class="relative z-10 w-full max-w-[280px] hidden md:block">
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto drop-shadow-xl animate-pulse">
+                    <circle cx="100" cy="100" r="80" fill="black" fill-opacity="0.1" stroke="black" stroke-width="2" stroke-dasharray="8 8"/>
+                    <path d="M60 140 L100 80 L140 140 Z" fill="black" fill-opacity="0.2" stroke="black" stroke-width="4"/>
+                    <path d="M100 60 L100 130" stroke="black" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="100" cy="50" r="12" fill="black"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="bg-[#02050b] border-t border-emerald-500/10 mt-16 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+            
+            <div class="lg:col-span-2 space-y-6">
+                <a href="#" class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 flex items-center justify-center bg-emerald-950 border border-emerald-500/30 rounded-xl">
+                        <i data-lucide="brain-circuit" class="w-5 h-5 text-emerald-400"></i>
+                    </div>
+                    <span class="text-lg font-extrabold tracking-wider text-white">OXYNEURO</span>
+                </a>
+                <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                    Empowering innovators to build startups that change the world with deep learning automation, collaborative networking, and MVP guidance.
+                </p>
+                <div class="text-xs text-gray-500">
+                    &copy; 2026 OxyNeuro Startups. All rights reserved.
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="text-white font-extrabold tracking-wider text-sm uppercase">Quick Links</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-emerald-400 transition">Home</a></li>
+                    <li><a href="#startups" class="hover:text-emerald-400 transition">Startups</a></li>
+                    <li><a href="#journey" class="hover:text-emerald-400 transition">Ideas</a></li>
+                    <li><a href="#community" class="hover:text-emerald-400 transition">Community</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="text-white font-extrabold tracking-wider text-sm uppercase">Resources</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-emerald-400 transition">Guides</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition">Docs</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition">Tools</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition">Blogs</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="text-white font-extrabold tracking-wider text-sm uppercase">Company</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-emerald-400 transition">About Us</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition">Events</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition">Contact</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-emerald-500/10 py-6 bg-black/20">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="text-xs text-gray-500">
+                    Engineered with next-generation web modules. Built for AI ecosystems.
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="w-8 h-8 rounded-full bg-[#05161a] border border-emerald-500/20 flex items-center justify-center text-gray-400 hover:text-emerald-400 hover:border-emerald-400/50 transition">
+                        <i data-lucide="github" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-[#05161a] border border-emerald-500/20 flex items-center justify-center text-gray-400 hover:text-emerald-400 hover:border-emerald-400/50 transition">
+                        <i data-lucide="message-square" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-[#05161a] border border-emerald-500/20 flex items-center justify-center text-gray-400 hover:text-emerald-400 hover:border-emerald-400/50 transition">
+                        <i data-lucide="twitter" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-[#05161a] border border-emerald-500/20 flex items-center justify-center text-gray-400 hover:text-emerald-400 hover:border-emerald-400/50 transition">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-[#05161a] border border-emerald-500/20 flex items-center justify-center text-gray-400 hover:text-emerald-400 hover:border-emerald-400/50 transition">
+                        <i data-lucide="youtube" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+  <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Responsive Hamburger Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Submit Idea Modal Controls
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalFormContent = document.getElementById('modalFormContent');
+        const modalSuccessContent = document.getElementById('modalSuccessContent');
+
+        function toggleModal() {
+            if (modalOverlay.classList.contains('hidden')) {
+                modalOverlay.classList.remove('hidden');
+                setTimeout(() => {
+                    modalOverlay.classList.remove('opacity-0');
+                }, 50);
+            } else {
+                modalOverlay.classList.add('opacity-0');
+                setTimeout(() => {
+                    modalOverlay.classList.add('hidden');
+                    // Reset to form display state
+                    modalFormContent.classList.remove('hidden');
+                    modalSuccessContent.classList.add('hidden');
+                    document.getElementById('ideaForm').reset();
+                }, 300);
+            }
+        }
+
+        // Form Submission Logic
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            // Transition from form to Success State
+            modalFormContent.classList.add('hidden');
+            modalSuccessContent.classList.remove('hidden');
+        }
+
+        // Dynamic Categories Info Selection State
+        const categoryData = {
+            'Artificial Intelligence': "Founders are building large-language models and automation agents on our active platform pipeline.",
+            'SaaS Platforms': "Cloud-first system tools designed with integrated API routing infrastructure and robust security databases.",
+            'Mobile Apps': "Native iOS and Android implementations with modern responsive UI and low latency rendering layers.",
+            'Web Applications': "Full-stack client management portals, developer environments, and reactive dashboard integrations.",
+            'EdTech': "Interactive training software setups using customizable AI agents and analytics trackers.",
+            'HealthTech': "Secure cloud database networks optimizing patient coordination and algorithmic assessment setups.",
+            'FinTech': "Encrypted micro-payment engines, payment processors, and algorithmic investment tracking tools.",
+            'Gaming': "Web3 integration modules, dynamic graphic engines, and cloud scaling tools for developers."
+        };
+
+        function selectCategory(catName) {
+            // Remove highlighted borders from all categories
+            const cards = document.querySelectorAll('.category-card');
+            cards.forEach(card => {
+                card.classList.remove('border-emerald-400', 'bg-[#031215]');
+                card.classList.add('border-emerald-500/10', 'bg-[#031215]/50');
+            });
+
+            // Highlight chosen card
+            event.currentTarget.classList.add('border-emerald-400', 'bg-[#031215]');
+            event.currentTarget.classList.remove('border-emerald-500/10', 'bg-[#031215]/50');
+
+            // Render details
+            document.getElementById('selectedCatText').innerText = catName;
+            document.getElementById('selectedCatDesc').innerText = categoryData[catName] || "";
+        }
+
+        // Stats Live Counter Logic (Counts when visible on screen)
+        const counters = document.querySelectorAll('.counter');
+        const countObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    let count = 0;
+                    const speed = target / 50; // speed division factor
+
+                    const updateCount = () => {
+                        count += Math.ceil(speed);
+                        if (count < target) {
+                            counter.innerText = count;
+                            setTimeout(updateCount, 25);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => countObserver.observe(counter));
+    </script>
+</body>
+</html>
