@@ -43,17 +43,6 @@
         ::-webkit-scrollbar-track { background: #020617; }
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #334155; }
-        html,
-body {
-    height: 100%;
-    
-}
-
-#chatStream {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-}
-        
     </style>
 </head>
 <body class="text-slate-100 antialiased min-h-screen relative selection:bg-purple-500 selection:text-white">
@@ -64,7 +53,7 @@ body {
     <header class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/80 border-b border-slate-800/80 px-4 lg:px-8 py-4 transition-all">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <button id="mobileMenuBtn" class="lg:hidden p-2 text-slate-400 hover:text-white">
+                <button id="mobileMenuBtn" class="lg:hidden p-2 text-slate-400 hover:text-white relative z-50">
                     <i data-lucide="menu"></i>
                 </button>
                 <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-600 to-blue-500 flex items-center justify-center shadow-neonBlue">
@@ -133,8 +122,8 @@ body {
             </div>
 
             <div class="lg:col-span-5 relative flex items-center justify-center py-8">
-                <div class="absolute w-72 h-72 rounded-full border border-dashed border-slate-700/60 animate-[spin_40s_linear_infinite]"></div>
-                <div class="absolute w-96 h-96 rounded-full border border-dashed border-slate-800/40 animate-[spin_60s_linear_infinite]"></div>
+                <div class="absolute w-72 h-72 rounded-full border border-dashed border-slate-700/60 animate-[spin_40s_linear_infinite] pointer-events-none"></div>
+                <div class="absolute w-96 h-96 rounded-full border border-dashed border-slate-800/40 animate-[spin_60s_linear_infinite] pointer-events-none"></div>
                 
                 <div class="relative w-44 h-44 rounded-full bg-gradient-to-tr from-purple-900/80 to-blue-900/80 p-1 shadow-neonPurple flex items-center justify-center border border-purple-500/30 backdrop-blur-md">
                     <div class="text-center">
@@ -158,23 +147,23 @@ body {
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
                 <button class="engine-pill flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-blue-500 bg-blue-500/5 text-left shadow-neonBlue transition-all" onclick="selectEngine(this, 'ChatGPT')">
                     <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-xs">GPT</div>
-                    <div><div class="text-xs font-bold text-white">ChatGPT</div><div class="text-[10px] text-slate-500">OpenAI</div></div>
+                    <div><div class="text-xs font-bold text-white model-name">ChatGPT</div><div class="text-[10px] text-slate-500">OpenAI</div></div>
                 </button>
                 <button class="engine-pill flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800 text-left hover:border-slate-700 transition-all" onclick="selectEngine(this, 'Gemini')">
                     <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-xs">GEM</div>
-                    <div><div class="text-xs font-bold text-slate-300">Gemini</div><div class="text-[10px] text-slate-500">Google</div></div>
+                    <div><div class="text-xs font-bold text-slate-300 model-name">Gemini</div><div class="text-[10px] text-slate-500">Google</div></div>
                 </button>
                 <button class="engine-pill flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800 text-left hover:border-slate-700 transition-all" onclick="selectEngine(this, 'Grok')">
                     <div class="w-8 h-8 rounded-lg bg-slate-200/20 flex items-center justify-center text-white font-bold text-xs">GRK</div>
-                    <div><div class="text-xs font-bold text-slate-300">Grok</div><div class="text-[10px] text-slate-500">xAI</div></div>
+                    <div><div class="text-xs font-bold text-slate-300 model-name">Grok</div><div class="text-[10px] text-slate-500">xAI</div></div>
                 </button>
                 <button class="engine-pill flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800 text-left hover:border-slate-700 transition-all" onclick="selectEngine(this, 'Claude')">
                     <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-500 font-bold text-xs">CLD</div>
-                    <div><div class="text-xs font-bold text-slate-300">Claude</div><div class="text-[10px] text-slate-500">Anthropic</div></div>
+                    <div><div class="text-xs font-bold text-slate-300 model-name">Claude</div><div class="text-[10px] text-slate-500">Anthropic</div></div>
                 </button>
                 <button class="engine-pill flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800 text-left hover:border-slate-700 transition-all" onclick="selectEngine(this, 'Perplexity')">
                     <div class="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-xs">PPX</div>
-                    <div><div class="text-xs font-bold text-slate-300">Perplexity</div><div class="text-[10px] text-slate-500">Perplexity</div></div>
+                    <div><div class="text-xs font-bold text-slate-300 model-name">Perplexity</div><div class="text-[10px] text-slate-500">Perplexity</div></div>
                 </button>
                 <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-950/20 border border-dashed border-slate-800 text-left text-slate-600">
                     <div class="w-8 h-8 rounded-lg border border-dashed border-slate-800 flex items-center justify-center"><i data-lucide="plus" class="w-4 h-4"></i></div>
@@ -185,7 +174,7 @@ body {
 
         <section id="dashboard" class="grid lg:grid-cols-12 gap-6 items-start relative">
             
-            <div id="sidebarCol" class="lg:col-span-3 bg-slate-950/80 lg:bg-slate-900/40 border border-slate-800/80 rounded-2xl p-4 space-y-6 hidden lg:block fixed lg:static inset-y-0 left-0 z-50 w-72 lg:w-auto overflow-y-auto backdrop-blur-xl lg:backdrop-blur-none">
+            <div id="sidebarCol" class="lg:col-span-3 bg-slate-950/95 lg:bg-slate-900/40 border border-slate-800/80 rounded-2xl p-4 space-y-6 hidden lg:block fixed lg:static inset-y-0 left-0 z-[100] w-72 lg:w-auto h-full lg:h-auto overflow-y-auto backdrop-blur-xl lg:backdrop-blur-none shadow-2xl lg:shadow-none">
                 <div class="flex items-center justify-between lg:hidden border-b border-slate-800 pb-3 mb-4">
                     <span class="font-bold text-sm text-slate-400">Navigation</span>
                     <button id="closeSidebarBtn" class="p-1.5 text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
@@ -218,27 +207,7 @@ body {
                         <div class="truncate p-1.5 hover:text-white rounded hover:bg-slate-900/40 cursor-pointer"><i data-lucide="clock" class="w-3 h-3 inline mr-1.5 text-slate-600"></i> Python automation script API</div>
                     </div>
                 </div>
-
-                <div class="bg-gradient-to-br from-purple-950/50 to-slate-900 border border-purple-500/30 rounded-xl p-3 text-center space-y-2.5 shadow-md">
-                    <div class="text-xs font-bold text-purple-300">Upgrade to Pro</div>
-                    <p class="text-[10px] text-slate-400">Unlock maximum speed, unlimited inputs, and exclusive models.</p>
-                    <a href="#pro-section" class="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold py-1.5 rounded-lg transition-all">Go Unlimited</a>
-                </div>
-            </div>
-
-            <div class="lg:col-span-6 bg-slate-900/30 border border-slate-800 rounded-2xl flex flex-col h-[85vh] shadow-xl overflow-hidden backdrop-blur-sm">
-                
-                <div class="bg-slate-900/80 border-b border-slate-800/80 px-4 py-3 flex items-center justify-between gap-2 flex-wrap">
-                    <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span class="text-xs font-bold text-slate-200" id="activeEngineLabel">Consolidated Multi-Model Stream</span>
-                    </div>
-                    <div class="flex items-center gap-1.5 text-[10px] bg-slate-950 px-2 py-1 rounded-lg border border-slate-800">
-                        <span class="text-slate-500">Active Node:</span> <span class="text-blue-400 font-bold" id="nodeIndicator">All Connected</span>
-                    </div>
-                </div>
-
-                <div id="chatStream" class="flex-1 overflow-y-auto p-4 space-y-4 text-sm scroll-smooth">
+                <div id="chatStream" class="flex-1 overflow-y-auto p-4 space-y-4 text-sm relative">
                     
                     <div class="space-y-3">
                         <div class="flex items-start gap-2.5 justify-end">
@@ -270,11 +239,13 @@ body {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            </div>
                     </div>
-                    </div>
+                    <!-- CHAT STICKY ANCHOR -->
+                    <div id="chatAnchor" class="h-1"></div>
+                </div>
 
-                <div class="sticky bottom-0 z-10 p-3 bg-slate-950/95 border-t border-slate-800/80 backdrop-blur-lg space-y-2.5">
+                <div class="p-3 bg-slate-950/80 border-t border-slate-800/80 space-y-2.5">
                     <div class="flex items-center gap-2">
                         <input type="text" id="userInput" placeholder="Ask anything... (Press enter or click submit)" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-slate-100 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/30 transition-all">
                         <button id="sendBtn" class="p-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl shadow-md hover:scale-105 transition-all flex items-center justify-center shrink-0">
@@ -307,7 +278,7 @@ body {
 
             </div>
 
-            <div class="lg:col-span-3 space-y-6">
+            <div class="lg:col-span-3 space-y-6 relative z-20">
                 
                 <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-4 text-center space-y-4 backdrop-blur-sm">
                     <div class="flex items-center justify-between text-xs font-bold text-slate-400">
@@ -375,8 +346,7 @@ body {
 
             </div>
         </section>
-
-        <section class="space-y-6">
+        <section class="space-y-6 relative z-20">
             <div class="text-center lg:text-left space-y-2">
                 <h2 class="text-2xl font-bold tracking-tight">What Can You Do Today?</h2>
                 <p class="text-xs text-slate-400">Deploy high-performance specialized operations across multi-tiered model parameters instantly.</p>
@@ -405,7 +375,7 @@ body {
                 </div>
             </div>
         </section>
-        <section id="pro-section" class="grid lg:grid-cols-3 gap-6 items-stretch">
+        <section id="pro-section" class="grid lg:grid-cols-3 gap-6 items-stretch relative z-20">
             
             <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-5 space-y-4 flex flex-col justify-between backdrop-blur-sm">
                 <div>
@@ -436,7 +406,6 @@ body {
                     </div>
                 </div>
             </div>
-
             <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-5 space-y-4 backdrop-blur-sm">
                 <h3 class="text-base font-bold text-white">Why Choose Oxy Neuro AI?</h3>
                 <p class="text-[11px] text-slate-400">Our decentralized platform bridges standard models directly into one comprehensive unified workstation pipeline.</p>
@@ -448,29 +417,29 @@ body {
                 </div>
             </div>
             <div class="bg-gradient-to-br from-indigo-950/80 via-purple-950/70 to-slate-950 border border-purple-500/40 rounded-2xl p-5 flex flex-col justify-between relative overflow-hidden shadow-neonPurple group">
-                <div class="absolute -right-8 -bottom-8 w-40 h-40 bg-purple-600/10 rounded-full blur-2xl group-hover:bg-purple-600/20 transition-all"></div>
+                <div class="absolute -right-8 -bottom-8 w-40 h-40 bg-purple-600/10 rounded-full blur-2xl group-hover:bg-purple-600/20 transition-all pointer-events-none"></div>
                 
-                <div class="space-y-2">
+                <div class="space-y-2 relative z-10">
                     <div class="inline-block bg-purple-500/20 border border-purple-400/30 text-purple-300 font-bold text-[10px] px-2.5 py-1 rounded-md uppercase tracking-wider">PRO ACCESS</div>
                     <h3 class="text-lg font-black text-white leading-tight">Unlock Ultimate Power</h3>
                     <p class="text-[11px] text-slate-400 leading-normal">Ditch single-model rate constraints. Elevate parameters to full industrial grade processing capacities.</p>
                 </div>
 
-                <div class="my-4 space-y-2 text-xs text-slate-300">
+                <div class="my-4 space-y-2 text-xs text-slate-300 relative z-10">
                     <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400"></i> Infinite Concurrent Conversational Streams</div>
                     <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400"></i> Heavy Core File Vector Parsing Uploads</div>
                     <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400"></i> Immediate Priority Compute Queue Node</div>
                 </div>
 
-                <button class="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold py-2.5 px-4 rounded-xl text-xs shadow-md transition-all flex items-center justify-center gap-1.5">
+                <button class="w-full relative z-10 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold py-2.5 px-4 rounded-xl text-xs shadow-md transition-all flex items-center justify-center gap-1.5">
                     Upgrade Now <i data-lucide="sparkles" class="w-3.5 h-3.5 fill-white"></i>
                 </button>
             </div>
         </section>
 
-        <hr class="border-slate-900">
+        <hr class="border-slate-900 relative z-20">
 
-        <footer class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center lg:text-left py-4">
+        <footer class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center lg:text-left py-4 relative z-20">
             <div class="space-y-1">
                 <div class="text-2xl font-black text-white">10K+</div>
                 <div class="text-[10px] uppercase font-bold tracking-wider text-slate-500">Active Operators</div>
@@ -496,12 +465,11 @@ body {
                 <div class="text-[10px] uppercase font-bold tracking-wider text-slate-500">Global Trust Index</div>
             </div>
         </footer>
-        </main>
+    </main>
 
     <script>
         // Init Lucide Vectors Icons graphics
         lucide.createIcons();
-
         const sidebarCol = document.getElementById('sidebarCol');
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const closeSidebarBtn = document.getElementById('closeSidebarBtn');
@@ -514,28 +482,80 @@ body {
         let targetedModel = "All Connected";
 
         // Mobile drawer toggles
-        mobileMenuBtn.addEventListener('click', () => sidebarCol.classList.remove('hidden'));
-        closeSidebarBtn.addEventListener('click', () => sidebarCol.classList.add('hidden'));
+        if(mobileMenuBtn && sidebarCol) {
+            mobileMenuBtn.addEventListener('click', () => {
+                sidebarCol.classList.remove('hidden');
+                sidebarCol.classList.add('block');
+            });
+        }
+        if(closeSidebarBtn && sidebarCol) {
+            closeSidebarBtn.addEventListener('click', () => {
+                sidebarCol.classList.add('hidden');
+                sidebarCol.classList.remove('block');
+            });
+        }
 
         // Engine Select Tab Selector
-        function selectEngine(element, engineName) {
+        window.selectEngine = function(element, engineName) {
             document.querySelectorAll('.engine-pill').forEach(btn => {
                 btn.classList.remove('border-blue-500', 'bg-blue-500/5', 'shadow-neonBlue');
                 btn.classList.add('border-slate-800');
-                btn.querySelector('.text-xs').classList.replace('text-white', 'text-slate-300');
+                
+                const textEl = btn.querySelector('.model-name');
+                if (textEl) {
+                    textEl.classList.remove('text-white');
+                    textEl.classList.add('text-slate-300');
+                }
             });
             
             element.classList.remove('border-slate-800');
             element.classList.add('border-blue-500', 'bg-blue-500/5', 'shadow-neonBlue');
-            element.querySelector('.text-xs').classList.replace('text-slate-300', 'text-white');
+            
+            const selectedTextEl = element.querySelector('.model-name');
+            if (selectedTextEl) {
+                selectedTextEl.classList.remove('text-slate-300');
+                selectedTextEl.classList.add('text-white');
+            }
             
             targetedModel = engineName;
-            activeEngineLabel.innerText = `${engineName} Processing Node`;
-            nodeIndicator.innerText = engineName;
+            if(activeEngineLabel) activeEngineLabel.innerText = `${engineName} Processing Node`;
+            if(nodeIndicator) nodeIndicator.innerText = engineName;
+        }
+
+        // HELPER: Float/Scroll view smoothly to the persistent bottom anchor
+        function scrollToBottom() {
+            if (!chatStream) return;
+            setTimeout(() => {
+                const anchor = document.getElementById('chatAnchor');
+                if (anchor) {
+                    anchor.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                } else {
+                    chatStream.scrollTop = chatStream.scrollHeight;
+                }
+            }, 50);
+        }
+        // HELPER: Smooth character streaming typewriter engine
+        function typeWriter(element, text, delay = 12, callback) {
+            let i = 0;
+            element.innerHTML = "";
+            function type() {
+                if (i < text.length) {
+                    // Instantly convert double asterisks into bold HTML tag markers
+                    element.innerHTML = text.slice(0, i + 1).replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                    i++;
+                    scrollToBottom();
+                    setTimeout(type, delay);
+                } else {
+                    if (callback) callback();
+                }
+            }
+            type();
         }
 
         // Action Function: Inject Client Messages into Workspace Stream Screen
         function triggerMessageDispatch() {
+            if(!userInput || !chatStream) return;
+            
             const promptText = userInput.value.trim();
             if(!promptText) return;
 
@@ -547,19 +567,17 @@ body {
                     ${promptText}
                 </div>
             `;
-            chatStream.appendChild(clientBubble);
+            
+            const anchor = document.getElementById('chatAnchor');
+            chatStream.insertBefore(clientBubble, anchor);
             userInput.value = "";
-            chatStream.scrollTo({
-    top: chatStream.scrollHeight,
-    behavior: "smooth"
-});
+            scrollToBottom();
 
-            // Simulate Engine Multi-tier computation timeout lag
+            // Simulate Engine Multi-tier computation typewriter flow
             setTimeout(() => {
                 const automatedSystemCard = document.createElement('div');
                 automatedSystemCard.className = "flex items-start gap-2.5 animate-fade-in";
                 
-                // Tailor text strings logic depending on selection indicators
                 let systemResponseText = `Synthetic analytics executed across multi-core nodes matching constraints for parameters relative to "${promptText}".`;
                 if(targetedModel !== "All Connected") {
                     systemResponseText = `Dedicated localized direct response parameter successfully returned from the **${targetedModel}** API pipeline for your query: "${promptText}". Data encryption token verified.`;
@@ -571,29 +589,68 @@ body {
                         <div class="text-[11px] font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1.5">
                             <i data-lucide="terminal" class="w-3 h-3"></i> OXY ENGINE (${targetedModel.toUpperCase()})
                         </div>
-                        <p class="text-xs text-slate-200 leading-relaxed">${systemResponseText}</p>
+                        <p class="text-xs text-slate-200 leading-relaxed typing-element"></p>
                     </div>
                 `;
-                chatStream.appendChild(automatedSystemCard);
-                lucide.createIcons(); // Refresh vectors inside appended components
-                chatStream.scrollTo({
-    top: chatStream.scrollHeight,
-    behavior: "smooth"
-});
+                
+                chatStream.insertBefore(automatedSystemCard, anchor);
+                lucide.createIcons(); // Refresh icons inside appended components
+                
+                const typingElement = automatedSystemCard.querySelector('.typing-element');
+                typeWriter(typingElement, systemResponseText, 12, () => {
+                    scrollToBottom();
+                });
+            }, 900);
         }
 
         // Clear log function
-        function clearChat() {
+        window.clearChat = function() {
+            if(!chatStream) return;
             chatStream.innerHTML = `
                 <div class="text-center py-8 text-xs text-slate-500 border border-dashed border-slate-800 rounded-xl bg-slate-950/20">
                     Workspace log history flushed. Ready to execute new query instructions.
                 </div>
+                <div id="chatAnchor" class="h-1"></div>
             `;
         }
 
         // Watch actions events listeners
-        sendBtn.addEventListener('click', triggerMessageDispatch);
-        userInput.addEventListener('keydown', (e) => { if(e.key === 'Enter') triggerMessageDispatch(); });
+        if(sendBtn) sendBtn.addEventListener('click', triggerMessageDispatch);
+        if(userInput) {
+            userInput.addEventListener('keydown', (e) => { 
+                if(e.key === 'Enter') triggerMessageDispatch(); 
+            });
+        }
+
+        // Initial scroll down on page load
+        scrollToBottom();
     </script>
 </body>
 </html>
+
+
+
+        
+                                
+
+                <div class="bg-gradient-to-br from-purple-950/50 to-slate-900 border border-purple-500/30 rounded-xl p-3 text-center space-y-2.5 shadow-md">
+                    <div class="text-xs font-bold text-purple-300">Upgrade to Pro</div>
+                    <p class="text-[10px] text-slate-400">Unlock maximum speed, unlimited inputs, and exclusive models.</p>
+                    <a href="#pro-section" class="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold py-1.5 rounded-lg transition-all">Go Unlimited</a>
+                </div>
+            </div>
+
+            <!-- CHAT WORKSPACE SECTION WITH DYNAMIC RESPONSIVE HEIGHT -->
+            <div class="lg:col-span-6 bg-slate-900/30 border border-slate-800 rounded-2xl flex flex-col h-[70vh] min-h-[500px] max-h-[650px] shadow-xl overflow-hidden backdrop-blur-sm relative z-20">
+                
+                <div class="bg-slate-900/80 border-b border-slate-800/80 px-4 py-3 flex items-center justify-between gap-2 flex-wrap">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span class="text-xs font-bold text-slate-200" id="activeEngineLabel">Consolidated Multi-Model Stream</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-[10px] bg-slate-950 px-2 py-1 rounded-lg border border-slate-800">
+                        <span class="text-slate-500">Active Node:</span> <span class="text-blue-400 font-bold" id="nodeIndicator">All Connected</span>
+                    </div>
+                </div>
+
+             
