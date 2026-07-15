@@ -830,7 +830,7 @@ Released under the MIT license: http://jsbin.mit-license.org
 
         });
 
-        function sendMessage() {
+        async function sendMessage() {
 
             const input = document.getElementById("userInput");
 
@@ -842,14 +842,26 @@ Released under the MIT license: http://jsbin.mit-license.org
 
             input.value = "";
 
-            setTimeout(() => {
+            try {
+    const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            message: message
+        })
+    });
 
-                addMessage(
-                    "ai",
-                    `<strong>${activeEngine}:</strong> This is a demo response. Connect your API endpoint to generate real AI replies.`
-                );
+    const data = await response.json();
 
-            }, 700);
+    addMessage(
+        "ai",
+        `<strong>${activeEngine}</strong><br>${data.reply || data.error}`
+    );
+} catch (err) {
+    addMessage("ai", "Error: " + err.message);
+            }
 
         }
 
