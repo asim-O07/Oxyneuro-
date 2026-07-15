@@ -852,13 +852,13 @@ Released under the MIT license: http://jsbin.mit-license.org
             message: message
         })
     });
+                const data = await response.json();
 
-    const data = await response.json();
+    const reply =
+    data.candidates?.[0]?.content?.parts?.[0]?.text ||
+    JSON.stringify(data, null, 2);
 
-    addMessage(
-        "ai",
-        `<strong>${activeEngine}</strong><br>${data.reply || data.error}`
-    );
+addMessage("ai", reply);
 } catch (err) {
     addMessage("ai", "Error: " + err.message);
             }
