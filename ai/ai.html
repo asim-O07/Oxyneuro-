@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2026 by asim-O07 (http://jsbin.com/becajav/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
 <html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
@@ -30,6 +39,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #020617;
@@ -64,8 +74,7 @@
                     <span class="block text-[10px] text-blue-400 uppercase tracking-widest font-semibold">One Platform. All AI.</span>
                 </div>
             </div>
-
-            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-400">
+                        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-400">
                 <a href="#" class="text-white border-b-2 border-purple-500 pb-1 px-1">Home</a>
                 <a href="#dashboard" class="hover:text-white transition-colors">Chat</a>
                 <a href="#models" class="hover:text-white transition-colors">AI Models</a>
@@ -104,17 +113,24 @@
                 <p class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
                     Access the world's most powerful AI models in one ecosystem. Compare variations, analyze parallel responses, and generate context-aware results.
                 </p>
-                
-                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-slate-400 pt-2">
-                    <div class="flex items-center gap-1.5 bg-slate-900/60 border border-slate-800 px-3 py-1.5 rounded-lg"><i data-lucide="sparkles" class="text-purple-400 w-4 h-4"></i> Smarter Responses</div>
-                    <div class="flex items-center gap-1.5 bg-slate-900/60 border border-slate-800 px-3 py-1.5 rounded-lg"><i data-lucide="shield-check" class="text-green-400 w-4 h-4"></i> Private & Encrypted</div>
-                    <div class="flex items-center gap-1.5 bg-slate-900/60 border border-slate-800 px-3 py-1.5 rounded-lg"><i data-lucide="zap" class="text-amber-400 w-4 h-4"></i> High-Speed Engine</div>
-                </div>
 
-                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs text-slate-400 pt-2">
+                    <div class="flex items-center gap-1.5 bg-slate-900/60 border border-slate-800 px-3 py-1.5 rounded-lg">
+                        <i data-lucide="sparkles" class="text-purple-400 w-4 h-4"></i> Smarter Responses
+                    </div>
+                    <div class="flex items-center gap-1.5 bg-slate-900/60 border border-slate-800 px-3 py-1.5 rounded-lg">
+                        <i data-lucide="shield-check" class="text-green-400 w-4 h-4"></i> Private & Encrypted
+                    </div>
+                    <div class="flex items-center gap-1.5 bg-slate-900/60 border border-slate-800 px-3 py-1.5 rounded-lg">
+                        <i data-lucide="zap" class="text-amber-400 w-4 h-4"></i> High-Speed Engine
+                    </div>
+                </div>
+                                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
                     <a href="#dashboard" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium px-6 py-3.5 rounded-xl text-center shadow-neonBlue hover:shadow-neonPurple hover:scale-[1.02] transition-all flex items-center justify-center gap-2">
-                        Start AI Chat Now <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        Start AI Chat Now
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
+
                     <a href="#models" class="bg-slate-900/80 border border-slate-800 hover:bg-slate-800/80 text-slate-300 font-medium px-6 py-3.5 rounded-xl text-center transition-all">
                         Explore Models
                     </a>
@@ -123,534 +139,722 @@
 
             <div class="lg:col-span-5 relative flex items-center justify-center py-8">
                 <div class="absolute w-72 h-72 rounded-full border border-dashed border-slate-700/60 animate-[spin_40s_linear_infinite] pointer-events-none"></div>
+
                 <div class="absolute w-96 h-96 rounded-full border border-dashed border-slate-800/40 animate-[spin_60s_linear_infinite] pointer-events-none"></div>
-                
-                <div class="relative w-44 h-44 rounded-full bg-gradient-to-tr from-purple-900/80 to-blue-900/80 p-1 shadow-neonPurple flex items-center justify-center border border-purple-500/30 backdrop-blur-md">
+
+                <a href="#dashboard" class="relative w-44 h-44 rounded-full bg-gradient-to-tr from-purple-900/80 to-blue-900/80 p-1 shadow-neonPurple flex items-center justify-center border border-purple-500/30 backdrop-blur-md cursor-pointer hover:scale-105 transition-all z-30">
                     <div class="text-center">
                         <div class="font-bold text-sm tracking-wide text-white">OXY</div>
-                        <div class="font-extrabold text-lg bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">NEURO AI</div>
+                        <div class="font-extrabold text-lg bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+                            NEURO AI
+                        </div>
                     </div>
+                </a>
+
+                <div class="absolute -top-4 bg-slate-900/90 border border-emerald-500/30 rounded-xl px-3 py-1.5 flex items-center gap-2 text-xs backdrop-blur-md shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    ChatGPT
+                    <span class="text-[10px] text-slate-500">OpenAI</span>
                 </div>
 
-                <div class="absolute -top-4 bg-slate-900/90 border border-emerald-500/30 rounded-xl px-3 py-1.5 flex items-center gap-2 text-xs backdrop-blur-md shadow-lg"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> ChatGPT <span class="text-[10px] text-slate-500">OpenAI</span></div>
-                <div class="absolute right-0 top-16 bg-slate-900/90 border border-purple-500/30 rounded-xl px-3 py-1.5 flex items-center gap-2 text-xs backdrop-blur-md shadow-lg"><span class="w-2 h-2 rounded-full bg-purple-500"></span> Gemini <span class="text-[10px] text-slate-500">Google</span></div>
-                <div class="absolute -right-6 bottom-24 bg-slate-900/90 border border-slate-500/30 rounded-xl px-3 py-1.5 flex items-center gap-2 text-xs backdrop-blur-md shadow-lg"><span class="w-2 h-2 rounded-full bg-white"></span> Grok <span class="text-[10px] text-slate-500">xAI</span></div>
-                <div class="absolute left-0 bottom-12 bg-slate-900/90 border border-amber-500/30 rounded-xl px-3 py-1.5 flex items-center gap-2 text-xs backdrop-blur-md shadow-lg"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Claude <span class="text-[10px] text-slate-500">Anthropic</span></div>
-                <div class="absolute -left-10 top-20 bg-slate-900/90 border border-cyan-500/30 rounded-xl px-3 py-1.5 flex items-center gap-2 text-xs backdrop-blur-md shadow-lg"><span class="w-2 h-2 rounded-full bg-cyan-500"></span> Perplexity <span class="text-[10px] text-slate-500">Perplexity</span></div>
+                <div class="absolute right-0 top-16 bg-slate-900/90 border border-purple-500/30 rounded-xl px-3 py-1.5 flex items-center gap-2 text-xs backdrop-blur-md shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+                    Gemini
+                    <span class="text-[10px] text-slate-500">Google</span>
+                </div>
+
+                <div class="absolute -right-6 bottom-24 bg-slate-900/90 border border-slate-500/30 rounded-xl px-3 py-1.5 flex items-center gap-2 text-xs backdrop-blur-md shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-white"></span>
+                    Grok
+                    <span class="text-[10px] text-slate-500">xAI</span>
+                </div>
+                                <div class="absolute left-0 bottom-12 bg-slate-900/90 border border-amber-500/30 rounded-xl px-3 py-1.5 flex items-center gap-2 text-xs backdrop-blur-md shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                    Claude
+                    <span class="text-[10px] text-slate-500">Anthropic</span>
+                </div>
+
+                <div class="absolute -left-10 top-20 bg-slate-900/90 border border-cyan-500/30 rounded-xl px-3 py-1.5 flex items-center gap-2 text-xs backdrop-blur-md shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-cyan-500"></span>
+                    Perplexity
+                    <span class="text-[10px] text-slate-500">Perplexity</span>
+                </div>
             </div>
         </section>
 
         <hr class="border-slate-900">
 
         <section id="models" class="space-y-4">
-            <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500">Choose Your Active Engine</h3>
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-slate-500">
+                Choose Your Active Engine
+            </h3>
+
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-                <button class="engine-pill flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-blue-500 bg-blue-500/5 text-left shadow-neonBlue transition-all" onclick="selectEngine(this, 'ChatGPT')">
-                    <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-xs">GPT</div>
-                    <div><div class="text-xs font-bold text-white model-name">ChatGPT</div><div class="text-[10px] text-slate-500">OpenAI</div></div>
+
+                <button class="engine-pill flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-blue-500 bg-blue-500/5 text-left shadow-neonBlue transition-all"
+                    onclick="selectEngine(this, 'ChatGPT')">
+
+                    <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-xs">
+                        GPT
+                    </div>
+
+                    <div>
+                        <div class="text-xs font-bold text-white model-name">
+                            ChatGPT
+                        </div>
+                        <div class="text-[10px] text-slate-500">
+                            OpenAI
+                        </div>
+                    </div>
+
                 </button>
-                <button class="engine-pill flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800 text-left hover:border-slate-700 transition-all" onclick="selectEngine(this, 'Gemini')">
-                    <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-xs">GEM</div>
-                    <div><div class="text-xs font-bold text-slate-300 model-name">Gemini</div><div class="text-[10px] text-slate-500">Google</div></div>
+
+                <button class="engine-pill flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800 text-left hover:border-slate-700 transition-all"
+                    onclick="selectEngine(this, 'Gemini')">
+
+                    <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold text-xs">
+                        GEM
+                    </div>
+
+                    <div>
+                        <div class="text-xs font-bold text-slate-300 model-name">
+                            Gemini
+                        </div>
+
+                        <div class="text-[10px] text-slate-500">
+                            Google
+                        </div>
+                    </div>
+
                 </button>
-                <button class="engine-pill flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800 text-left hover:border-slate-700 transition-all" onclick="selectEngine(this, 'Grok')">
-                    <div class="w-8 h-8 rounded-lg bg-slate-200/20 flex items-center justify-center text-white font-bold text-xs">GRK</div>
-                    <div><div class="text-xs font-bold text-slate-300 model-name">Grok</div><div class="text-[10px] text-slate-500">xAI</div></div>
+                                <button class="engine-pill flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800 text-left hover:border-slate-700 transition-all"
+                    onclick="selectEngine(this, 'Grok')">
+
+                    <div class="w-8 h-8 rounded-lg bg-slate-200/20 flex items-center justify-center text-white font-bold text-xs">
+                        GRK
+                    </div>
+
+                    <div>
+                        <div class="text-xs font-bold text-slate-300 model-name">
+                            Grok
+                        </div>
+
+                        <div class="text-[10px] text-slate-500">
+                            xAI
+                        </div>
+                    </div>
+
                 </button>
-                <button class="engine-pill flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800 text-left hover:border-slate-700 transition-all" onclick="selectEngine(this, 'Claude')">
-                    <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-500 font-bold text-xs">CLD</div>
-                    <div><div class="text-xs font-bold text-slate-300 model-name">Claude</div><div class="text-[10px] text-slate-500">Anthropic</div></div>
+
+                <button class="engine-pill flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800 text-left hover:border-slate-700 transition-all"
+                    onclick="selectEngine(this, 'Claude')">
+
+                    <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-500 font-bold text-xs">
+                        CLD
+                    </div>
+
+                    <div>
+                        <div class="text-xs font-bold text-slate-300 model-name">
+                            Claude
+                        </div>
+
+                        <div class="text-[10px] text-slate-500">
+                            Anthropic
+                        </div>
+                    </div>
+
                 </button>
-                <button class="engine-pill flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800 text-left hover:border-slate-700 transition-all" onclick="selectEngine(this, 'Perplexity')">
-                    <div class="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-xs">PPX</div>
-                    <div><div class="text-xs font-bold text-slate-300 model-name">Perplexity</div><div class="text-[10px] text-slate-500">Perplexity</div></div>
+
+                <button class="engine-pill flex items-center gap-3 p-3 rounded-xl bg-slate-900/40 border border-slate-800 text-left hover:border-slate-700 transition-all"
+                    onclick="selectEngine(this, 'Perplexity')">
+
+                    <div class="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold text-xs">
+                        PPX
+                    </div>
+
+                    <div>
+                        <div class="text-xs font-bold text-slate-300 model-name">
+                            Perplexity
+                        </div>
+
+                        <div class="text-[10px] text-slate-500">
+                            Perplexity
+                        </div>
+                    </div>
+
                 </button>
+
                 <div class="flex items-center gap-3 p-3 rounded-xl bg-slate-950/20 border border-dashed border-slate-800 text-left text-slate-600">
-                    <div class="w-8 h-8 rounded-lg border border-dashed border-slate-800 flex items-center justify-center"><i data-lucide="plus" class="w-4 h-4"></i></div>
-                    <div><div class="text-xs font-bold">More</div><div class="text-[10px]">Coming Soon</div></div>
+
+                    <div class="w-8 h-8 rounded-lg border border-dashed border-slate-800 flex items-center justify-center">
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                    </div>
+
+                    <div>
+                        <div class="text-xs font-bold">More</div>
+                        <div class="text-[10px]">Coming Soon</div>
+                    </div>
+
                 </div>
+
             </div>
-        </section>
+        </section>        <section id="dashboard" class="grid lg:grid-cols-12 gap-6 items-start relative pt-8">
 
-        <section id="dashboard" class="grid lg:grid-cols-12 gap-6 items-start relative">
-            
             <div id="sidebarCol" class="lg:col-span-3 bg-slate-950/95 lg:bg-slate-900/40 border border-slate-800/80 rounded-2xl p-4 space-y-6 hidden lg:block fixed lg:static inset-y-0 left-0 z-[100] w-72 lg:w-auto h-full lg:h-auto overflow-y-auto backdrop-blur-xl lg:backdrop-blur-none shadow-2xl lg:shadow-none">
+
                 <div class="flex items-center justify-between lg:hidden border-b border-slate-800 pb-3 mb-4">
-                    <span class="font-bold text-sm text-slate-400">Navigation</span>
-                    <button id="closeSidebarBtn" class="p-1.5 text-slate-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+                    <span class="font-bold text-sm text-slate-400">
+                        Navigation
+                    </span>
+
+                    <button id="closeSidebarBtn" class="p-1.5 text-slate-400 hover:text-white">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
                 </div>
 
-                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium p-2.5 rounded-xl transition-all flex items-center justify-center gap-2 text-sm shadow-md" onclick="clearChat()">
-                    <i data-lucide="plus" class="w-4 h-4"></i> New Chat
+                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium p-2.5 rounded-xl transition-all flex items-center justify-center gap-2 text-sm shadow-md"
+                    onclick="clearChat()">
+
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                    New Chat
+
                 </button>
 
                 <div class="space-y-1.5">
-                    <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500 px-2 mb-2">Capabilities</div>
-                    <a href="#" class="flex items-center justify-between p-2 rounded-xl bg-slate-800/60 text-blue-400 font-medium text-sm"><span class="flex items-center gap-2.5"><i data-lucide="message-square" class="w-4 h-4"></i> AI Chat</span><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span></a>
-                    <a href="#" class="flex items-center justify-between p-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-slate-900/60 text-sm transition-all"><span class="flex items-center gap-2.5"><i data-lucide="git-compare" class="w-4 h-4"></i> Compare AI</span></a>
-                    <a href="#" class="flex items-center justify-between p-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-slate-900/60 text-sm transition-all"><span class="flex items-center gap-2.5"><i data-lucide="grid" class="w-4 h-4"></i> AI Tools</span></a>
-                    <a href="#" class="flex items-center justify-between p-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-slate-900/60 text-sm transition-all"><span class="flex items-center gap-2.5"><i data-lucide="file-text" class="w-4 h-4"></i> Documents</span></a>
-                    <a href="#" class="flex items-center justify-between p-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-slate-900/60 text-sm transition-all"><span class="flex items-center gap-2.5"><i data-lucide="image" class="w-4 h-4"></i> Image Generation</span></a>
-                    <a href="#" class="flex items-center justify-between p-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-slate-900/60 text-sm transition-all"><span class="flex items-center gap-2.5"><i data-lucide="terminal" class="w-4 h-4"></i> Code Assistant</span></a>
-                    <a href="#" class="flex items-center justify-between p-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-slate-900/60 text-sm transition-all"><span class="flex items-center gap-2.5"><i data-lucide="mic" class="w-4 h-4"></i> Voice Assistant</span></a>
+
+                    <div class="text-[11px] font-bold uppercase tracking-wider text-slate-500 px-2 mb-2">
+                        Capabilities
+                    </div>
+
+                    <a href="#" class="flex items-center justify-between p-2 rounded-xl bg-slate-800/60 text-blue-400 font-medium text-sm">
+                        <span class="flex items-center gap-2.5">
+                            <i data-lucide="message-square" class="w-4 h-4"></i>
+                            AI Chat
+                        </span>
+
+                        <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                    </a>
+
+                    <a href="#" class="flex items-center justify-between p-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-slate-900/60 text-sm transition-all">
+                        <span class="flex items-center gap-2.5">
+                            <i data-lucide="git-compare" class="w-4 h-4"></i>
+                            Compare AI
+                        </span>
+                    </a>
+
+                    <a href="#" class="flex items-center justify-between p-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-slate-900/60 text-sm transition-all">
+                        <span class="flex items-center gap-2.5">
+                            <i data-lucide="grid" class="w-4 h-4"></i>
+                            AI Tools
+                        </span>
+                    </a>
+                                        <a href="#" class="flex items-center justify-between p-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-slate-900/60 text-sm transition-all">
+                        <span class="flex items-center gap-2.5">
+                            <i data-lucide="file-text" class="w-4 h-4"></i>
+                            Documents
+                        </span>
+                    </a>
+
+                    <a href="#" class="flex items-center justify-between p-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-slate-900/60 text-sm transition-all">
+                        <span class="flex items-center gap-2.5">
+                            <i data-lucide="image" class="w-4 h-4"></i>
+                            Image Generation
+                        </span>
+                    </a>
+
+                    <a href="#" class="flex items-center justify-between p-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-slate-900/60 text-sm transition-all">
+                        <span class="flex items-center gap-2.5">
+                            <i data-lucide="terminal" class="w-4 h-4"></i>
+                            Code Assistant
+                        </span>
+                    </a>
+
+                    <a href="#" class="flex items-center justify-between p-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-slate-900/60 text-sm transition-all">
+                        <span class="flex items-center gap-2.5">
+                            <i data-lucide="mic" class="w-4 h-4"></i>
+                            Voice Assistant
+                        </span>
+                    </a>
                 </div>
 
                 <div class="space-y-1.5">
                     <div class="flex items-center justify-between px-2 mb-2">
-                        <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">Recent Logs</span>
-                        <a href="#" class="text-[10px] text-purple-400 hover:underline">View all</a>
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                            Recent Logs
+                        </span>
+
+                        <a href="#" class="text-[10px] text-purple-400 hover:underline">
+                            View all
+                        </a>
                     </div>
+
                     <div class="text-xs space-y-1 text-slate-400 px-2">
-                        <div class="truncate p-1.5 hover:text-white rounded hover:bg-slate-900/40 cursor-pointer"><i data-lucide="clock" class="w-3 h-3 inline mr-1.5 text-slate-600"></i> Explain Quantum Physics</div>
-                        <div class="truncate p-1.5 hover:text-white rounded hover:bg-slate-900/40 cursor-pointer"><i data-lucide="clock" class="w-3 h-3 inline mr-1.5 text-slate-600"></i> Best SaaS architecture ideas</div>
-                        <div class="truncate p-1.5 hover:text-white rounded hover:bg-slate-900/40 cursor-pointer"><i data-lucide="clock" class="w-3 h-3 inline mr-1.5 text-slate-600"></i> Advanced DSA Map patterns</div>
-                        <div class="truncate p-1.5 hover:text-white rounded hover:bg-slate-900/40 cursor-pointer"><i data-lucide="clock" class="w-3 h-3 inline mr-1.5 text-slate-600"></i> Python automation script API</div>
+                        <div class="truncate p-1.5 hover:text-white rounded hover:bg-slate-900/40 cursor-pointer">
+                            <i data-lucide="clock" class="w-3 h-3 inline mr-1.5 text-slate-600"></i>
+                            Explain Quantum Physics
+                        </div>
+
+                        <div class="truncate p-1.5 hover:text-white rounded hover:bg-slate-900/40 cursor-pointer">
+                            <i data-lucide="clock" class="w-3 h-3 inline mr-1.5 text-slate-600"></i>
+                            Best SaaS architecture ideas
+                        </div>
+
+                        <div class="truncate p-1.5 hover:text-white rounded hover:bg-slate-900/40 cursor-pointer">
+                            <i data-lucide="clock" class="w-3 h-3 inline mr-1.5 text-slate-600"></i>
+                            Advanced DSA Map patterns
+                        </div>
+                                                <div class="truncate p-1.5 hover:text-white rounded hover:bg-slate-900/40 cursor-pointer">
+                            <i data-lucide="clock" class="w-3 h-3 inline mr-1.5 text-slate-600"></i>
+                            Python automation script API
+                        </div>
                     </div>
                 </div>
-                <div id="chatStream" class="flex-1 overflow-y-auto p-4 space-y-4 text-sm relative">
-                    
-                    <div class="space-y-3">
+
+                <div class="bg-gradient-to-br from-purple-950/50 to-slate-900 border border-purple-500/30 rounded-xl p-3 text-center space-y-2.5 shadow-md">
+
+                    <div class="text-xs font-bold text-purple-300">
+                        Upgrade to Pro
+                    </div>
+
+                    <p class="text-[10px] text-slate-400">
+                        Unlock maximum speed, unlimited inputs, and exclusive models.
+                    </p>
+
+                    <a href="#pro-section"
+                       class="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold py-1.5 rounded-lg transition-all">
+                        Go Unlimited
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="lg:col-span-6 bg-slate-900/30 border border-slate-800 rounded-2xl flex flex-col h-[70vh] min-h-[500px] max-h-[650px] shadow-xl overflow-hidden backdrop-blur-sm relative z-20">
+
+                <div class="bg-slate-900/80 border-b border-slate-800/80 px-4 py-3 flex items-center justify-between gap-2 flex-wrap">
+
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+
+                        <span class="text-xs font-bold text-slate-200"
+                              id="activeEngineLabel">
+                            Consolidated Multi-Model Stream
+                        </span>
+                    </div>
+
+                    <div class="flex items-center gap-1.5 text-[10px] bg-slate-950 px-2 py-1 rounded-lg border border-slate-800">
+                        <span class="text-slate-500">Active Node:</span>
+                        <span class="text-blue-400 font-bold" id="nodeIndicator">
+                            All Connected
+                        </span>
+                    </div>
+
+                </div>
+
+                <div id="chatStream"
+                     class="flex-1 overflow-y-auto p-4 space-y-4 text-sm relative">
+                                        <div class="space-y-3">
+
                         <div class="flex items-start gap-2.5 justify-end">
+
                             <div class="bg-blue-600/20 text-blue-300 border border-blue-500/20 rounded-2xl rounded-tr-none px-4 py-2.5 max-w-[85%] text-xs shadow-sm">
                                 What is the future of AI in the next 10 years?
                             </div>
+
                         </div>
 
                         <div class="flex items-start gap-2.5">
-                            <div class="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center text-white shrink-0 shadow-sm"><i data-lucide="cpu" class="w-4 h-4"></i></div>
+
+                            <div class="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center text-white shrink-0 shadow-sm">
+                                <i data-lucide="cpu" class="w-4 h-4"></i>
+                            </div>
+
                             <div class="bg-slate-900/90 border border-slate-800 rounded-2xl rounded-tl-none p-4 max-w-[90%] space-y-3">
+
                                 <div class="text-[11px] font-bold uppercase tracking-wider text-purple-400 flex items-center gap-1.5">
-                                    <i data-lucide="layers" class="w-3 h-3"></i> OXY NEURO AI (Multi-Model Summary)
+                                    <i data-lucide="layers" class="w-3 h-3"></i>
+                                    OXY NEURO AI (Multi-Model Summary)
                                 </div>
+
                                 <p class="text-xs text-slate-300 leading-relaxed">
                                     Here's a synthesized overview generated across ChatGPT, Gemini, and Claude parameters:
                                 </p>
+
                                 <ul class="text-xs text-slate-300 space-y-2 pl-1">
-                                    <li class="flex items-start gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i> <span><strong>Hyper-Personalization:</strong> AI agents will blend into daily life operating on real-time private telemetry.</span></li>
-                                    <li class="flex items-start gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i> <span><strong>Industrial Automation:</strong> Heavy transformation across molecular engineering, design, and code optimization.</span></li>
-                                    <li class="flex items-start gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i> <span><strong>AGI Mileposts:</strong> General reasoning capabilities will scale rapidly, though regulatory constraints remain strict.</span></li>
+
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                        <span><strong>Hyper-Personalization:</strong> AI agents will blend into daily life operating on real-time private telemetry.</span>
+                                    </li>
+
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                        <span><strong>Industrial Automation:</strong> Heavy transformation across molecular engineering, design, and code optimization.</span>
+                                    </li>
+
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5"></i>
+                                        <span><strong>AGI Mileposts:</strong> General reasoning capabilities will scale rapidly, though regulatory constraints remain strict.</span>
+                                    </li>
+
                                 </ul>
-                                <div class="pt-2 border-t border-slate-800/80 space-y-2">
-                                    <span class="text-[10px] text-slate-500 block">Examine raw individual response segments:</span>
+                                                                <div class="pt-2 border-t border-slate-800/80 space-y-2">
+
+                                    <span class="text-[10px] text-slate-500 block">
+                                        Examine raw individual response segments:
+                                    </span>
+
                                     <div class="flex flex-wrap gap-1.5">
-                                        <button class="bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-[10px] font-semibold transition-all">ChatGPT Detailed</button>
-                                        <button class="bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/20 text-purple-400 px-2 py-1 rounded text-[10px] font-semibold transition-all">Gemini Detailed</button>
-                                        <button class="bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/20 text-amber-400 px-2 py-1 rounded text-[10px] font-semibold transition-all">Claude Analysis</button>
+
+                                        <button class="bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 text-emerald-400 px-2 py-1 rounded text-[10px] font-semibold transition-all">
+                                            ChatGPT Detailed
+                                        </button>
+
+                                        <button class="bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/20 text-purple-400 px-2 py-1 rounded text-[10px] font-semibold transition-all">
+                                            Gemini Detailed
+                                        </button>
+
+                                        <button class="bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/20 text-amber-400 px-2 py-1 rounded text-[10px] font-semibold transition-all">
+                                            Claude Analysis
+                                        </button>
+
                                     </div>
+
                                 </div>
+
                             </div>
-                            </div>
+
+                        </div>
+
                     </div>
-                    <!-- CHAT STICKY ANCHOR -->
+
                     <div id="chatAnchor" class="h-1"></div>
+
                 </div>
 
                 <div class="p-3 bg-slate-950/80 border-t border-slate-800/80 space-y-2.5">
+
                     <div class="flex items-center gap-2">
-                        <input type="text" id="userInput" placeholder="Ask anything... (Press enter or click submit)" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-slate-100 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/30 transition-all">
-                        <button id="sendBtn" class="p-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl shadow-md hover:scale-105 transition-all flex items-center justify-center shrink-0">
+
+                        <input
+                            type="text"
+                            id="userInput"
+                            placeholder="Ask anything... (Press enter or click submit)"
+                            class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3.5 py-2 text-xs text-slate-100 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/30 transition-all"
+                        >
+
+                        <button id="sendBtn"
+                            class="p-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl shadow-md hover:scale-105 transition-all flex items-center justify-center shrink-0">
+
                             <i data-lucide="send" class="w-4 h-4"></i>
+
                         </button>
-                    </div>
 
-                    <div class="flex items-center justify-between text-[11px] text-slate-400 px-1 flex-wrap gap-2">
+                    </div>
+                    
+                                            <div class="flex items-center justify-between text-[11px] text-slate-400 px-1 flex-wrap gap-2">
+
                         <div class="flex items-center gap-4">
-                            <button class="hover:text-slate-200 flex items-center gap-1"><i data-lucide="paperclip" class="w-3.5 h-3.5"></i> Attach</button>
-                            
+
+                            <button class="hover:text-slate-200 flex items-center gap-1">
+                                <i data-lucide="paperclip" class="w-3.5 h-3.5"></i>
+                                Attach
+                            </button>
+
                             <label class="inline-flex items-center gap-1.5 cursor-pointer select-none">
-                                <span class="hover:text-slate-200 flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i> Web Search <span class="text-[9px] text-blue-400 font-bold uppercase">Pro</span></span>
+
+                                <span class="hover:text-slate-200 flex items-center gap-1">
+                                    <i data-lucide="globe" class="w-3.5 h-3.5"></i>
+                                    Web Search
+                                    <span class="text-[9px] text-blue-400 font-bold uppercase">
+                                        Pro
+                                    </span>
+                                </span>
+
                                 <div class="relative w-7 h-4 bg-slate-800 rounded-full transition-all border border-slate-700">
-                                    <input type="checkbox" id="webSearchToggle" class="sr-only peer" checked>
+
+                                    <input
+                                        type="checkbox"
+                                        id="webSearchToggle"
+                                        class="sr-only peer"
+                                        checked
+                                    >
+
                                     <div class="absolute top-[2px] left-[2px] bg-blue-500 w-2.5 h-2.5 rounded-full transition-all peer-checked:translate-x-3"></div>
+
                                 </div>
+
                             </label>
 
                             <label class="inline-flex items-center gap-1.5 cursor-pointer select-none">
-                                <span class="hover:text-slate-200">Deep Think</span>
+
+                                <span class="hover:text-slate-200">
+                                    Deep Think
+                                </span>
+
                                 <div class="relative w-7 h-4 bg-slate-800 rounded-full transition-all border border-slate-700">
-                                    <input type="checkbox" id="deepThinkToggle" class="sr-only peer">
+
+                                    <input
+                                        type="checkbox"
+                                        id="deepThinkToggle"
+                                        class="sr-only peer"
+                                    >
+
                                     <div class="absolute top-[2px] left-[2px] bg-purple-500 w-2.5 h-2.5 rounded-full transition-all peer-checked:translate-x-3"></div>
+
                                 </div>
+
                             </label>
+
                         </div>
+
                     </div>
+
                 </div>
 
             </div>
+                        <div class="lg:col-span-3 space-y-5">
 
-            <div class="lg:col-span-3 space-y-6 relative z-20">
-                
-                <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-4 text-center space-y-4 backdrop-blur-sm">
-                    <div class="flex items-center justify-between text-xs font-bold text-slate-400">
-                        <span>AI Power Meter</span>
-                        <i data-lucide="activity" class="w-4 h-4 text-purple-400"></i>
+                <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-4 backdrop-blur-sm">
+
+                    <div class="flex items-center justify-between mb-4">
+
+                        <h3 class="text-sm font-bold text-white">
+                            Live AI Status
+                        </h3>
+
+                        <span class="text-[10px] text-emerald-400 font-semibold">
+                            ONLINE
+                        </span>
+
                     </div>
-                    
-                    <div class="relative flex items-center justify-center">
-                        <svg class="w-28 h-28 transform -rotate-90">
-                            <circle cx="56" cy="56" r="48" stroke="#1e293b" stroke-width="8" fill="transparent" />
-                            <circle cx="56" cy="56" r="48" stroke="url(#gradientId)" stroke-width="8" fill="transparent" stroke-dasharray="301.6" stroke-dashoffset="15" stroke-linecap="round" />
-                            <defs>
-                                <linearGradient id="gradientId" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#3b82f6" />
-                                    <stop offset="100%" stop-color="#a855f7" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        <div class="absolute text-center">
-                            <div class="text-2xl font-black text-white">98%</div>
-                            <div class="text-[9px] uppercase tracking-wider text-slate-500 font-semibold">Optimal</div>
+
+                    <div class="space-y-3 text-xs">
+
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">ChatGPT</span>
+                            <span class="text-emerald-400">● Connected</span>
                         </div>
+
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">Gemini</span>
+                            <span class="text-emerald-400">● Connected</span>
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">Claude</span>
+                            <span class="text-emerald-400">● Connected</span>
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">Grok</span>
+                            <span class="text-amber-400">● Beta</span>
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">Perplexity</span>
+                            <span class="text-emerald-400">● Connected</span>
+                        </div>
+
                     </div>
-                    <p class="text-[11px] text-slate-400 leading-normal">System processing velocity operating at prime maximum capacity with parallel computing threads enabled.</p>
+
                 </div>
 
-                <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-4 space-y-3.5 backdrop-blur-sm">
-                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Today's Workspace Footprint</div>
-                    <div class="space-y-2 text-xs">
-                        <div class="flex items-center justify-between p-2 rounded-xl bg-slate-950/40 border border-slate-900">
-                            <span class="flex items-center gap-2 text-slate-400"><i data-lucide="message-square" class="w-3.5 h-3.5 text-blue-400"></i> Active Chats</span>
-                            <span class="font-bold text-white">12</span>
+                <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-4 backdrop-blur-sm">
+
+                    <h3 class="text-sm font-bold text-white mb-4">
+                        Usage Today
+                    </h3>
+
+                    <div class="space-y-4">
+                                                <div>
+                            <div class="flex justify-between text-[11px] mb-1">
+                                <span class="text-slate-400">Requests</span>
+                                <span class="text-white">1,284 / 5,000</span>
+                            </div>
+
+                            <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full w-1/4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                            </div>
                         </div>
-                        <div class="flex items-center justify-between p-2 rounded-xl bg-slate-950/40 border border-slate-900">
-                            <span class="flex items-center gap-2 text-slate-400"><i data-lucide="image" class="w-3.5 h-3.5 text-purple-400"></i> Rendered Images</span>
-                            <span class="font-bold text-white">8</span>
+
+                        <div>
+                            <div class="flex justify-between text-[11px] mb-1">
+                                <span class="text-slate-400">Tokens</span>
+                                <span class="text-white">2.3M</span>
+                            </div>
+
+                            <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full w-3/5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></div>
+                            </div>
                         </div>
-                        <div class="flex items-center justify-between p-2 rounded-xl bg-slate-950/40 border border-slate-900">
-                            <span class="flex items-center gap-2 text-slate-400"><i data-lucide="file-text" class="w-3.5 h-3.5 text-cyan-400"></i> Parsed Vectors</span>
-                            <span class="font-bold text-white">5</span>
+
+                        <div>
+                            <div class="flex justify-between text-[11px] mb-1">
+                                <span class="text-slate-400">Storage</span>
+                                <span class="text-white">8.1 GB</span>
+                            </div>
+
+                            <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full w-2/5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                            </div>
                         </div>
-                        <div class="flex items-center justify-between p-2 rounded-xl bg-slate-950/40 border border-slate-900">
-                            <span class="flex items-center gap-2 text-slate-400"><i data-lucide="code-2" class="w-3.5 h-3.5 text-amber-400"></i> Compiled Scripts</span>
-                            <span class="font-bold text-white">7</span>
-                        </div>
+
                     </div>
+
                 </div>
-                <div class="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-4 space-y-2.5 backdrop-blur-sm">
-                    <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Quick Utilities</div>
-                    <div class="space-y-1.5 text-xs">
-                        <a href="#" class="flex items-center justify-between p-2 rounded-xl hover:bg-slate-800/50 text-slate-300 transition-all border border-transparent hover:border-slate-800">
-                            <span class="flex items-center gap-2"><i data-lucide="wand-2" class="w-4 h-4 text-purple-400"></i> Image Architect</span>
-                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
-                        </a>
-                        <a href="#" class="flex items-center justify-between p-2 rounded-xl hover:bg-slate-800/50 text-slate-300 transition-all border border-transparent hover:border-slate-800">
-                            <span class="flex items-center gap-2"><i data-lucide="shrink" class="w-4 h-4 text-blue-400"></i> Smart Condenser</span>
-                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
-                        </a>
-                        <a href="#" class="flex items-center justify-between p-2 rounded-xl hover:bg-slate-800/50 text-slate-300 transition-all border border-transparent hover:border-slate-800">
-                            <span class="flex items-center gap-2"><i data-lucide="braces" class="w-4 h-4 text-amber-400"></i> Script Decipher</span>
-                            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i>
-                        </a>
+
+                <div id="pro-section" class="bg-gradient-to-br from-purple-900/30 via-slate-900 to-blue-900/30 border border-purple-500/20 rounded-2xl p-5 backdrop-blur-sm">
+
+                    <div class="flex items-center gap-2 mb-3">
+                        <i data-lucide="crown" class="w-5 h-5 text-yellow-400"></i>
+
+                        <h3 class="text-sm font-bold text-white">
+                            OXY NEURO PRO
+                        </h3>
                     </div>
+
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        Unlock premium AI models, unlimited chats, priority speed, web search, image generation, and advanced reasoning.
+                    </p>
+                                        <ul class="space-y-2 text-xs text-slate-300">
+
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                            GPT, Gemini, Claude & More
+                        </li>
+
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                            Unlimited AI Conversations
+                        </li>
+
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                            Image & Document AI
+                        </li>
+
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                            Early Access Features
+                        </li>
+
+                    </ul>
+
+                    <a href="#"
+                       class="mt-5 block w-full text-center bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white text-sm font-semibold py-3 rounded-xl transition-all shadow-lg">
+                        Upgrade Now
+                    </a>
+
                 </div>
 
             </div>
-        </section>
-        <section class="space-y-6 relative z-20">
-            <div class="text-center lg:text-left space-y-2">
-                <h2 class="text-2xl font-bold tracking-tight">What Can You Do Today?</h2>
-                <p class="text-xs text-slate-400">Deploy high-performance specialized operations across multi-tiered model parameters instantly.</p>
-            </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                <div class="group bg-slate-900/40 border border-slate-800 hover:border-blue-500/50 rounded-2xl p-5 space-y-4 hover:bg-slate-900/80 transition-all cursor-pointer">
-                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center group-hover:scale-110 transition-all"><i data-lucide="message-square-text"></i></div>
-                    <div><h4 class="text-sm font-bold text-white mb-1">AI Chat</h4><p class="text-[11px] text-slate-400 leading-normal">Unrestricted cross-model conversational logic synthesis.</p></div>
-                </div>
-                <div class="group bg-slate-900/40 border border-slate-800 hover:border-purple-500/50 rounded-2xl p-5 space-y-4 hover:bg-slate-900/80 transition-all cursor-pointer">
-                    <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center group-hover:scale-110 transition-all"><i data-lucide="sparkles"></i></div>
-                    <div><h4 class="text-sm font-bold text-white mb-1">Image Generation</h4><p class="text-[11px] text-slate-400 leading-normal">High-fidelity procedural digital artwork compilers.</p></div>
-                </div>
-                <div class="group bg-slate-900/40 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-5 space-y-4 hover:bg-slate-900/80 transition-all cursor-pointer">
-                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center group-hover:scale-110 transition-all"><i data-lucide="code-2"></i></div>
-                    <div><h4 class="text-sm font-bold text-white mb-1">Code Assistant</h4><p class="text-[11px] text-slate-400 leading-normal">Write, refactor, debug, and translate algorithms instantly.</p></div>
-                </div>
-                <div class="group bg-slate-900/40 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-5 space-y-4 hover:bg-slate-900/80 transition-all cursor-pointer">
-                    <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center group-hover:scale-110 transition-all"><i data-lucide="file-search"></i></div>
-                    <div><h4 class="text-sm font-bold text-white mb-1">Document Analyzer</h4><p class="text-[11px] text-slate-400 leading-normal">Extract insight, compile, or summarize massive arrays of text.</p></div>
-                </div>
-                <div class="group sm:col-span-2 lg:col-span-1 bg-slate-900/40 border border-slate-800 hover:border-pink-500/50 rounded-2xl p-5 space-y-4 hover:bg-slate-900/80 transition-all cursor-pointer">
-                    <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center group-hover:scale-110 transition-all"><i data-lucide="search-code"></i></div>
-                    <div><h4 class="text-sm font-bold text-white mb-1">Research Assistant</h4><p class="text-[11px] text-slate-400 leading-normal">Deep web querying engine with automated source maps.</p></div>
-                </div>
-            </div>
-        </section>
-        <section id="pro-section" class="grid lg:grid-cols-3 gap-6 items-stretch relative z-20">
-            
-            <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-5 space-y-4 flex flex-col justify-between backdrop-blur-sm">
-                <div>
-                    <h3 class="text-base font-bold text-white">Compare AI Index Responses</h3>
-                    <p class="text-[11px] text-slate-400 mb-4">Current relative processing efficiency ratings compiled across recent standard prompt sets.</p>
-                    
-                    <div class="space-y-3.5">
-                        <div class="space-y-1">
-                            <div class="flex justify-between text-xs font-semibold text-slate-300"><span>ChatGPT 4o</span><span class="text-emerald-400">9.6/10</span></div>
-                            <div class="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden"><div class="h-full bg-emerald-500 rounded-full" style="width: 96%"></div></div>
-                        </div>
-                        <div class="space-y-1">
-                            <div class="flex justify-between text-xs font-semibold text-slate-300"><span>Gemini Pro</span><span class="text-purple-400">9.3/10</span></div>
-                            <div class="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden"><div class="h-full bg-purple-500 rounded-full" style="width: 93%"></div></div>
-                        </div>
-                        <div class="space-y-1">
-                            <div class="flex justify-between text-xs font-semibold text-slate-300"><span>Grok 2.0</span><span class="text-slate-300">8.9/10</span></div>
-                            <div class="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden"><div class="h-full bg-slate-400 rounded-full" style="width: 89%"></div></div>
-                        </div>
-                        <div class="space-y-1">
-                            <div class="flex justify-between text-xs font-semibold text-slate-300"><span>Claude 3.5 Sonnet</span><span class="text-amber-400">9.2/10</span></div>
-                            <div class="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden"><div class="h-full bg-amber-500 rounded-full" style="width: 92%"></div></div>
-                        </div>
-                        <div class="space-y-1">
-                            <div class="flex justify-between text-xs font-semibold text-slate-300"><span>Perplexity Sonar</span><span class="text-cyan-400">9.4/10</span></div>
-                            <div class="w-full h-1.5 bg-slate-950 rounded-full overflow-hidden"><div class="h-full bg-cyan-500 rounded-full" style="width: 94%"></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-5 space-y-4 backdrop-blur-sm">
-                <h3 class="text-base font-bold text-white">Why Choose Oxy Neuro AI?</h3>
-                <p class="text-[11px] text-slate-400">Our decentralized platform bridges standard models directly into one comprehensive unified workstation pipeline.</p>
-                
-                <div class="space-y-3 text-xs text-slate-300">
-                    <div class="flex items-start gap-2.5"><i data-lucide="shield" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i> <div><strong>Universal Token Control:</strong> No multi-platform separate payments. Single operational pipeline.</div></div>
-                    <div class="flex items-start gap-2.5"><i data-lucide="shuffle" class="w-4 h-4 text-purple-400 mt-0.5 shrink-0"></i> <div><strong>Cross-Model Routing:</strong> Pass responses from ChatGPT directly into Claude for code vetting instantly.</div></div>
-                    <div class="flex items-start gap-2.5"><i data-lucide="eye-off" class="w-4 h-4 text-cyan-400 mt-0.5 shrink-0"></i> <div><strong>Zero Data Trailing:</strong> We implement high-encryption pass-through wrappers. Your workspace data remains internal.</div></div>
-                </div>
-            </div>
-            <div class="bg-gradient-to-br from-indigo-950/80 via-purple-950/70 to-slate-950 border border-purple-500/40 rounded-2xl p-5 flex flex-col justify-between relative overflow-hidden shadow-neonPurple group">
-                <div class="absolute -right-8 -bottom-8 w-40 h-40 bg-purple-600/10 rounded-full blur-2xl group-hover:bg-purple-600/20 transition-all pointer-events-none"></div>
-                
-                <div class="space-y-2 relative z-10">
-                    <div class="inline-block bg-purple-500/20 border border-purple-400/30 text-purple-300 font-bold text-[10px] px-2.5 py-1 rounded-md uppercase tracking-wider">PRO ACCESS</div>
-                    <h3 class="text-lg font-black text-white leading-tight">Unlock Ultimate Power</h3>
-                    <p class="text-[11px] text-slate-400 leading-normal">Ditch single-model rate constraints. Elevate parameters to full industrial grade processing capacities.</p>
-                </div>
-
-                <div class="my-4 space-y-2 text-xs text-slate-300 relative z-10">
-                    <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400"></i> Infinite Concurrent Conversational Streams</div>
-                    <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400"></i> Heavy Core File Vector Parsing Uploads</div>
-                    <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-400"></i> Immediate Priority Compute Queue Node</div>
-                </div>
-
-                <button class="w-full relative z-10 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold py-2.5 px-4 rounded-xl text-xs shadow-md transition-all flex items-center justify-center gap-1.5">
-                    Upgrade Now <i data-lucide="sparkles" class="w-3.5 h-3.5 fill-white"></i>
-                </button>
-            </div>
         </section>
 
-        <hr class="border-slate-900 relative z-20">
-
-        <footer class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center lg:text-left py-4 relative z-20">
-            <div class="space-y-1">
-                <div class="text-2xl font-black text-white">10K+</div>
-                <div class="text-[10px] uppercase font-bold tracking-wider text-slate-500">Active Operators</div>
-            </div>
-            <div class="space-y-1">
-                <div class="text-2xl font-black text-white">500K+</div>
-                <div class="text-[10px] uppercase font-bold tracking-wider text-slate-500">Processed Inputs</div>
-            </div>
-            <div class="space-y-1">
-                <div class="text-2xl font-black text-white">25+</div>
-                <div class="text-[10px] uppercase font-bold tracking-wider text-slate-500">Connected Engines</div>
-            </div>
-            <div class="space-y-1">
-                <div class="text-2xl font-black text-white">99.9%</div>
-                <div class="text-[10px] uppercase font-bold tracking-wider text-slate-500">Infrastructure Uptime</div>
-            </div>
-            <div class="space-y-1">
-                <div class="text-2xl font-black text-white">24/7</div>
-                <div class="text-[10px] uppercase font-bold tracking-wider text-slate-500">SLA Architecture</div>
-            </div>
-            <div class="space-y-1 flex flex-col justify-center lg:items-start items-center">
-                <div class="text-sm font-bold text-white flex items-center gap-1">4.9/5 <span class="text-amber-400 text-xs">★★★★★</span></div>
-                <div class="text-[10px] uppercase font-bold tracking-wider text-slate-500">Global Trust Index</div>
-            </div>
-        </footer>
     </main>
 
     <script>
-        // Init Lucide Vectors Icons graphics
+
         lucide.createIcons();
-        const sidebarCol = document.getElementById('sidebarCol');
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const closeSidebarBtn = document.getElementById('closeSidebarBtn');
-        const sendBtn = document.getElementById('sendBtn');
-        const userInput = document.getElementById('userInput');
-        const chatStream = document.getElementById('chatStream');
-        const activeEngineLabel = document.getElementById('activeEngineLabel');
-        const nodeIndicator = document.getElementById('nodeIndicator');
 
-        let targetedModel = "All Connected";
+        let activeEngine = "ChatGPT";
 
-        // Mobile drawer toggles
-        if(mobileMenuBtn && sidebarCol) {
-            mobileMenuBtn.addEventListener('click', () => {
-                sidebarCol.classList.remove('hidden');
-                sidebarCol.classList.add('block');
+        function selectEngine(button, engine) {
+
+            activeEngine = engine;
+
+            document.querySelectorAll(".engine-pill").forEach(el => {
+                el.classList.remove("border-blue-500", "bg-blue-500/5", "shadow-neonBlue");
+                el.classList.add("border-slate-800");
             });
-        }
-        if(closeSidebarBtn && sidebarCol) {
-            closeSidebarBtn.addEventListener('click', () => {
-                sidebarCol.classList.add('hidden');
-                sidebarCol.classList.remove('block');
-            });
-        }
 
-        // Engine Select Tab Selector
-        window.selectEngine = function(element, engineName) {
-            document.querySelectorAll('.engine-pill').forEach(btn => {
-                btn.classList.remove('border-blue-500', 'bg-blue-500/5', 'shadow-neonBlue');
-                btn.classList.add('border-slate-800');
-                
-                const textEl = btn.querySelector('.model-name');
-                if (textEl) {
-                    textEl.classList.remove('text-white');
-                    textEl.classList.add('text-slate-300');
-                }
-            });
-            
-            element.classList.remove('border-slate-800');
-            element.classList.add('border-blue-500', 'bg-blue-500/5', 'shadow-neonBlue');
-            
-            const selectedTextEl = element.querySelector('.model-name');
-            if (selectedTextEl) {
-                selectedTextEl.classList.remove('text-slate-300');
-                selectedTextEl.classList.add('text-white');
-            }
-            
-            targetedModel = engineName;
-            if(activeEngineLabel) activeEngineLabel.innerText = `${engineName} Processing Node`;
-            if(nodeIndicator) nodeIndicator.innerText = engineName;
+            button.classList.remove("border-slate-800");
+            button.classList.add("border-blue-500", "bg-blue-500/5", "shadow-neonBlue");
+
+            document.getElementById("nodeIndicator").textContent = engine;
+            document.getElementById("activeEngineLabel").textContent = engine + " Active";
+
         }
 
-        // HELPER: Float/Scroll view smoothly to the persistent bottom anchor
-        function scrollToBottom() {
-            if (!chatStream) return;
-            setTimeout(() => {
-                const anchor = document.getElementById('chatAnchor');
-                if (anchor) {
-                    anchor.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                } else {
-                    chatStream.scrollTop = chatStream.scrollHeight;
-                }
-            }, 50);
+        function clearChat() {
+
+            document.getElementById("chatStream").innerHTML =
+                '<div id="chatAnchor" class="h-1"></div>';
+
         }
-        // HELPER: Smooth character streaming typewriter engine
-        function typeWriter(element, text, delay = 12, callback) {
-            let i = 0;
-            element.innerHTML = "";
-            function type() {
-                if (i < text.length) {
-                    // Instantly convert double asterisks into bold HTML tag markers
-                    element.innerHTML = text.slice(0, i + 1).replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-                    i++;
-                    scrollToBottom();
-                    setTimeout(type, delay);
-                } else {
-                    if (callback) callback();
-                }
-            }
-            type();
-        }
+                function addMessage(sender, text) {
 
-        // Action Function: Inject Client Messages into Workspace Stream Screen
-        function triggerMessageDispatch() {
-            if(!userInput || !chatStream) return;
-            
-            const promptText = userInput.value.trim();
-            if(!promptText) return;
+            const chat = document.getElementById("chatStream");
 
-            // Generate Client Message Node UI element HTML layout
-            const clientBubble = document.createElement('div');
-            clientBubble.className = "flex items-start gap-2.5 justify-end";
-            clientBubble.innerHTML = `
-                <div class="bg-blue-600 text-white border border-blue-500/30 rounded-2xl rounded-tr-none px-4 py-2.5 max-w-[85%] text-xs shadow-md">
-                    ${promptText}
-                </div>
-            `;
-            
-            const anchor = document.getElementById('chatAnchor');
-            chatStream.insertBefore(clientBubble, anchor);
-            userInput.value = "";
-            scrollToBottom();
+            const wrapper = document.createElement("div");
 
-            // Simulate Engine Multi-tier computation typewriter flow
-            setTimeout(() => {
-                const automatedSystemCard = document.createElement('div');
-                automatedSystemCard.className = "flex items-start gap-2.5 animate-fade-in";
-                
-                let systemResponseText = `Synthetic analytics executed across multi-core nodes matching constraints for parameters relative to "${promptText}".`;
-                if(targetedModel !== "All Connected") {
-                    systemResponseText = `Dedicated localized direct response parameter successfully returned from the **${targetedModel}** API pipeline for your query: "${promptText}". Data encryption token verified.`;
-                }
+            if (sender === "user") {
 
-                automatedSystemCard.innerHTML = `
-                    <div class="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-white shrink-0 shadow-md"><i data-lucide="cpu" class="w-4 h-4"></i></div>
-                    <div class="bg-slate-900/90 border border-slate-800 rounded-2xl rounded-tl-none p-4 max-w-[90%] space-y-2">
-                        <div class="text-[11px] font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1.5">
-                            <i data-lucide="terminal" class="w-3 h-3"></i> OXY ENGINE (${targetedModel.toUpperCase()})
+                wrapper.innerHTML = `
+                    <div class="flex justify-end">
+                        <div class="bg-blue-600/20 border border-blue-500/20 text-blue-300 rounded-2xl rounded-tr-none px-4 py-2.5 max-w-[85%] text-xs">
+                            ${text}
                         </div>
-                        <p class="text-xs text-slate-200 leading-relaxed typing-element"></p>
                     </div>
                 `;
-                
-                chatStream.insertBefore(automatedSystemCard, anchor);
-                lucide.createIcons(); // Refresh icons inside appended components
-                
-                const typingElement = automatedSystemCard.querySelector('.typing-element');
-                typeWriter(typingElement, systemResponseText, 12, () => {
-                    scrollToBottom();
-                });
-            }, 900);
+
+            } else {
+
+                wrapper.innerHTML = `
+                    <div class="flex gap-2.5">
+                        <div class="w-7 h-7 rounded-lg bg-purple-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="cpu" class="w-4 h-4 text-white"></i>
+                        </div>
+
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl rounded-tl-none px-4 py-3 max-w-[90%] text-xs text-slate-300">
+                            ${text}
+                        </div>
+                    </div>
+                `;
+            }
+
+            chat.insertBefore(wrapper, document.getElementById("chatAnchor"));
+
+            lucide.createIcons();
+
+            chat.scrollTop = chat.scrollHeight;
+
         }
 
-        // Clear log function
-        window.clearChat = function() {
-            if(!chatStream) return;
-            chatStream.innerHTML = `
-                <div class="text-center py-8 text-xs text-slate-500 border border-dashed border-slate-800 rounded-xl bg-slate-950/20">
-                    Workspace log history flushed. Ready to execute new query instructions.
-                </div>
-                <div id="chatAnchor" class="h-1"></div>
-            `;
+        document.getElementById("sendBtn").addEventListener("click", sendMessage);
+
+        document.getElementById("userInput").addEventListener("keypress", function(e) {
+
+            if (e.key === "Enter") sendMessage();
+
+        });
+
+        function sendMessage() {
+
+            const input = document.getElementById("userInput");
+
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            addMessage("user", message);
+
+            input.value = "";
+
+            setTimeout(() => {
+
+                addMessage(
+                    "ai",
+                    `<strong>${activeEngine}:</strong> This is a demo response. Connect your API endpoint to generate real AI replies.`
+                );
+
+            }, 700);
+
         }
 
-        // Watch actions events listeners
-        if(sendBtn) sendBtn.addEventListener('click', triggerMessageDispatch);
-        if(userInput) {
-            userInput.addEventListener('keydown', (e) => { 
-                if(e.key === 'Enter') triggerMessageDispatch(); 
-            });
-        }
-
-        // Initial scroll down on page load
-        scrollToBottom();
     </script>
+
 </body>
 </html>
-
-
-
-        
-                                
-
-                <div class="bg-gradient-to-br from-purple-950/50 to-slate-900 border border-purple-500/30 rounded-xl p-3 text-center space-y-2.5 shadow-md">
-                    <div class="text-xs font-bold text-purple-300">Upgrade to Pro</div>
-                    <p class="text-[10px] text-slate-400">Unlock maximum speed, unlimited inputs, and exclusive models.</p>
-                    <a href="#pro-section" class="block w-full text-center bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold py-1.5 rounded-lg transition-all">Go Unlimited</a>
-                </div>
-            </div>
-
-            <!-- CHAT WORKSPACE SECTION WITH DYNAMIC RESPONSIVE HEIGHT -->
-            <div class="lg:col-span-6 bg-slate-900/30 border border-slate-800 rounded-2xl flex flex-col h-[70vh] min-h-[500px] max-h-[650px] shadow-xl overflow-hidden backdrop-blur-sm relative z-20">
                 
-                <div class="bg-slate-900/80 border-b border-slate-800/80 px-4 py-3 flex items-center justify-between gap-2 flex-wrap">
-                    <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span class="text-xs font-bold text-slate-200" id="activeEngineLabel">Consolidated Multi-Model Stream</span>
-                    </div>
-                    <div class="flex items-center gap-1.5 text-[10px] bg-slate-950 px-2 py-1 rounded-lg border border-slate-800">
-                        <span class="text-slate-500">Active Node:</span> <span class="text-blue-400 font-bold" id="nodeIndicator">All Connected</span>
-                    </div>
-                </div>
-
-             
