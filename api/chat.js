@@ -29,12 +29,9 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    const reply =
-      data.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "No response from Gemini.";
+console.log(JSON.stringify(data, null, 2));
 
-    res.status(200).json({ reply });
-
+res.status(200).json(data);
   } catch (error) {
     res.status(500).json({
       error: error.message
