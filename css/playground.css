@@ -1,1 +1,444 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap');
+
+:root {
+    --bg: #070b18;
+    --panel: #0d1428;
+    --panel-light: #121d36;
+    --border: rgba(110, 140, 255, 0.18);
+    --blue: #38bdf8;
+    --purple: #a855f7;
+    --text: #e8efff;
+    --muted: #8492b5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 15% 10%, rgba(56, 189, 248, 0.10), transparent 35%),
+        radial-gradient(ellipse at 85% 35%, rgba(168, 85, 247, 0.10), transparent 35%),
+        var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+}
+
+.navbar {
+    height: 75px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    background: rgba(7, 11, 24, 0.85);
+    backdrop-filter: blur(15px);
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+.back-btn {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    color: var(--blue);
+}
+
+.workspace {
+    width: 88%;
+    max-width: 1450px;
+    margin: 45px auto;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.eyebrow {
+    color: var(--blue);
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.page-header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(28px, 4vw, 43px);
+    margin-bottom: 10px;
+}
+
+.page-header h1 span {
+    background: linear-gradient(90deg, var(--blue), var(--purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.page-header > div:first-child > p:last-child {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.level-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 24px;
+    min-width: 190px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.05);
+}
+
+.level-card > i {
+    font-size: 28px;
+    color: #facc15;
+    filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.5));
+}
+
+.level-card small {
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.level-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.level-card h3 span {
+    color: var(--blue);
+}
+
+.level-card p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.editor-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.editor-panel,
+.output-panel {
+    min-width: 0;
+    background: rgba(13, 20, 40, 0.95);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+}
+
+.editor-toolbar {
+    min-height: 65px;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+}
+
+.language-tabs,
+.editor-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lang-btn,
+.editor-actions button {
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--muted);
+    padding: 9px 13px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: inherit;
+    transition: 0.25s;
+}
+
+.lang-btn.active {
+    color: var(--blue);
+    background: rgba(56, 189, 248, 0.10);
+    border-color: rgba(56, 189, 248, 0.25);
+}
+
+.editor-actions button:hover {
+    color: white;
+    background: var(--panel-light);
+}
+
+.editor-actions .run-btn {
+    background: linear-gradient(100deg, #0284c7, #7c3aed);
+    color: white;
+    font-weight: 700;
+    padding: 10px 18px;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+}
+
+.editor-actions .run-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px rgba(56, 189, 248, 0.3);
+}
+
+.editor-title {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 20px;
+    background: #0a1020;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.editor-title i {
+    color: var(--blue);
+}
+
+#codeEditor {
+    display: block;
+    width: 100%;
+    min-height: 350px;
+    resize: vertical;
+    border: none;
+    outline: none;
+    padding: 25px;
+    background: #090f1e;
+    color: #a5e6ff;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    tab-size: 4;
+    caret-color: var(--blue);
+}
+
+#codeEditor:focus {
+    box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.15);
+}
+
+.input-area {
+    padding: 16px 20px;
+    border-top: 1px solid var(--border);
+    background: #0a1020;
+}
+
+.input-area label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+#stdinInput {
+    width: 100%;
+    min-height: 65px;
+    resize: vertical;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    outline: none;
+    background: #080d19;
+    color: var(--text);
+    font-family: monospace;
+    font-size: 13px;
+}
+
+#stdinInput:focus {
+    border-color: var(--blue);
+}
+
+.output-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+}
+
+.output-header {
+    height: 65px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.output-header h3 {
+    font-size: 14px;
+}
+
+.output-header h3 i {
+    color: var(--blue);
+    margin-right: 8px;
+}
+
+#status {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.10);
+    padding: 6px 9px;
+    border-radius: 5px;
+}
+
+#output {
+    flex: 1;
+    min-height: 350px;
+    padding: 24px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    color: #a5f3fc;
+    font-family: 'Consolas', monospace;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.terminal-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px 18px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.challenge-card {
+    margin-top: 25px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(110deg, rgba(56, 189, 248, 0.09), rgba(168, 85, 247, 0.09));
+    border: 1px solid var(--border);
+    border-radius: 13px;
+}
+
+.challenge-card h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.challenge-card > div:first-child > p:last-child {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.challenge-reward {
+    white-space: nowrap;
+    color: #facc15;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.challenge-reward i {
+    margin-right: 5px;
+}
+
+.notice {
+    margin: 20px 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.notice i {
+    color: var(--blue);
+    margin-right: 5px;
+}
+
+@media (max-width: 900px) {
+    .editor-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .output-panel {
+        min-height: 350px;
+    }
+
+    #output {
+        min-height: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .workspace {
+        width: 92%;
+        margin: 30px auto;
+    }
+
+    .page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .level-card {
+        width: 100%;
+    }
+
+    .editor-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .editor-actions {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .editor-actions button {
+        flex: 1;
+    }
+
+    #codeEditor {
+        min-height: 300px;
+        font-size: 12px;
+        padding: 16px;
+    }
+
+    .challenge-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
